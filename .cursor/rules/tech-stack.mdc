@@ -1,0 +1,33 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Rule: Use Next.js, TypeScript, TailwindCSS, and Framer Motion
+
+## Match
+.*
+
+## Technology
+- Use **Next.js** as the frontend framework with the **App Router** (not Pages Router).
+- All pages and components should be structured using the **`app/` directory** format.
+
+## Language
+- Use **TypeScript** across the entire project. No JavaScript files should be used.
+
+## Styling
+- Use **TailwindCSS** exclusively for styling.
+- Do not use plain CSS files, CSS modules, or styled-components.
+
+## Animation
+- Use **Framer Motion** for all animations and transitions.
+- Avoid using CSS transition classes or vanilla JavaScript animations.
+
+## Project Structure
+- Organize components under a `components/` directory with a clear naming convention.
+- Keep logic modular and reusable.
+- Prefer server components when possible unless interactivity requires client components.
+
+## Notes
+- You can optionally add `shadcn/ui` for ready-made components styled with Tailwind.
+- For forms or animations, `react-hook-form` and `zod` may also be used.
