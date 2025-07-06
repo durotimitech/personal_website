@@ -85,12 +85,12 @@ export default function PhotographyPage() {
                                 description: 'Professional photo editing and retouching to enhance your images.',
                                 icon: '🎨'
                             }
-                        ].map((service, index) => (
+                        ].map((service) => (
                             <motion.div
                                 key={service.title}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
                                 className="bg-gray-50 rounded-2xl p-8 text-center"
                             >
                                 <div className="text-4xl mb-4">{service.icon}</div>
@@ -134,7 +134,7 @@ export default function PhotographyPage() {
                                     'Studio lighting equipment',
                                     'High-quality editing software',
                                     'Backup equipment for reliability'
-                                ].map((item, index) => (
+                                ].map((item) => (
                                     <div key={item} className="flex items-center space-x-3">
                                         <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                                         <span className="text-gray-700">{item}</span>
@@ -157,7 +157,7 @@ export default function PhotographyPage() {
                                     'Attention to lighting and detail',
                                     'Timeless and elegant aesthetic',
                                     'Storytelling through images'
-                                ].map((item, index) => (
+                                ].map((item) => (
                                     <div key={item} className="flex items-center space-x-3">
                                         <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                                         <span className="text-gray-700">{item}</span>
@@ -182,7 +182,7 @@ export default function PhotographyPage() {
                             Ready to Capture Your Moments?
                         </h2>
                         <p className="text-xl max-w-3xl mx-auto mb-8">
-                            Let's discuss your photography needs and create beautiful images that you'll treasure forever.
+                            Let&apos;s discuss your photography needs and create beautiful images that you&apos;ll treasure forever.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/#contact" className="bg-white text-green-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">

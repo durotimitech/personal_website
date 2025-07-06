@@ -1,18 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import ServiceCard from './ServiceCard';
 import Image from 'next/image';
-
-const projects = [
-    {
-        title: 'Payrole Inc.',
-        description: 'Payrole Inc. is a Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        image: '/works/payrole.jpg',
-        tags: ['Branding Design', 'Website Design', 'App Design', 'Development'],
-    },
-    // Add more projects as needed
-];
 
 const services = [
     {

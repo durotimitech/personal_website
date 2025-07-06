@@ -151,7 +151,7 @@ export default function WebDevelopmentPage() {
                             Ready to Build Your Website?
                         </h2>
                         <p className="text-xl max-w-3xl mx-auto mb-8">
-                            Let's discuss your project and create a website that perfectly represents your brand and achieves your goals.
+                            Let&apos;s discuss your project and create a website that perfectly represents your brand and achieves your goals.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/#contact" className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">

@@ -1,34 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import TrustedBy from './TrustedBy';
 import Button from './ui/Button';
-
-    
-    {
-        title: 'User-Centered Design',
-        description: 'Intuitive and engaging experiences, tailored for your audience.',
-    },
-    {
-        title: 'Brand Identity & Strategy',
-        description: 'Strong visual storytelling that makes your brand unforgettable.',
-    },
-    {
-        title: 'Responsive & Modern UI',
-        description: 'Pixel-perfect, design optimized for all devices.',
-    },
-    {
-        title: 'Seamless Prototyping',
-        description: 'Rapid design, prototyping, and iteration for efficiency.',
-    },
-];
-
-const stats = [
-    { value: '5+', label: 'Years of experience' },
-    { value: '200+', label: 'Successful project' },
-    { value: '98%', label: 'Satisfied clients' },
-];
 
 const menu = [
     { label: 'Home', href: '#', dropdown: false },
@@ -85,7 +57,7 @@ export default function Hero() {
                 {/* Right Side Intro */}
                 <div className="flex-1 flex flex-col items-end justify-center max-w-md">
                     <div className="text-white text-right text-lg md:text-xl font-normal mb-8">
-                        <span className="font-bold">Hi, I'm Timmy</span> <span className="text-neutral-300">I am a creative engineer with a passion for creating beautiful and functional digital experiences.</span>
+                        <span className="font-bold">Hi, I&apos;m Timmy</span> <span className="text-neutral-300">I am a creative engineer with a passion for creating beautiful and functional digital experiences.</span>
                     </div>
                     <Button
                         href="mailto:mejabidurotimi@gmail.com"

@@ -13,10 +13,10 @@ export default function ContactSection() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        Let's Work Together
+                        Let&apos;s Work Together
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Ready to bring your vision to life? Get in touch and let's discuss your project.
+                        Ready to bring your vision to life? Get in touch and let&apos;s discuss your project.
                     </p>
                 </motion.div>
 
@@ -30,9 +30,9 @@ export default function ContactSection() {
                         <div>
                             <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
                             <p className="text-gray-300 mb-8">
-                                I'm always excited to hear about new projects and opportunities.
+                                I&apos;m always excited to hear about new projects and opportunities.
                                 Whether you need a website, photography, videography, or event planning,
-                                I'm here to help make your vision a reality.
+                                I&apos;m here to help make your vision a reality.
                             </p>
                         </div>
 

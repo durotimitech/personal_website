@@ -85,12 +85,12 @@ export default function VideographyPage() {
                                 description: 'Compelling documentary content that tells meaningful stories.',
                                 icon: '🎬'
                             }
-                        ].map((service, index) => (
+                        ].map((service) => (
                             <motion.div
                                 key={service.title}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
                                 className="bg-gray-50 rounded-2xl p-8 text-center"
                             >
                                 <div className="text-4xl mb-4">{service.icon}</div>
@@ -134,7 +134,7 @@ export default function VideographyPage() {
                                     'High-quality audio recording',
                                     'Post-production editing and color grading',
                                     'Final delivery in multiple formats'
-                                ].map((item, index) => (
+                                ].map((item) => (
                                     <div key={item} className="flex items-center space-x-3">
                                         <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                                         <span className="text-gray-700">{item}</span>
@@ -157,7 +157,7 @@ export default function VideographyPage() {
                                     'High-quality audio equipment',
                                     'Advanced lighting systems',
                                     'Professional editing software'
-                                ].map((item, index) => (
+                                ].map((item) => (
                                     <div key={item} className="flex items-center space-x-3">
                                         <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                                         <span className="text-gray-700">{item}</span>
@@ -208,12 +208,12 @@ export default function VideographyPage() {
                                 description: 'Short, impactful commercial videos designed for advertising.',
                                 duration: '15-60 seconds'
                             }
-                        ].map((type, index) => (
+                        ].map((type) => (
                             <motion.div
                                 key={type.title}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
                                 className="bg-gray-50 rounded-2xl p-8 text-center"
                             >
                                 <h3 className="text-xl font-bold text-gray-900 mb-4">{type.title}</h3>
@@ -240,7 +240,7 @@ export default function VideographyPage() {
                             Ready to Create Your Video?
                         </h2>
                         <p className="text-xl max-w-3xl mx-auto mb-8">
-                            Let's discuss your video project and create compelling content that tells your story.
+                            Let&apos;s discuss your video project and create compelling content that tells your story.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/#contact" className="bg-white text-purple-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
