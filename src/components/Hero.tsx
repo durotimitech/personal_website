@@ -6,6 +6,7 @@ import TrustedBy from './TrustedBy';
 import Button from './ui/Button';
 
 const features = [
+    
     {
         title: 'User-Centered Design',
         description: 'Intuitive and engaging experiences, tailored for your audience.',
