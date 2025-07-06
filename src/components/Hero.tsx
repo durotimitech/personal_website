@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import TrustedBy from './TrustedBy';
+import Button from './ui/Button';
 
 const features = [
     {
@@ -61,12 +62,15 @@ export default function Hero() {
                 {/* Right icons */}
                 <div className="flex items-center gap-6">
                     {/* Contact button */}
-                    <a href="#" className="flex items-center gap-2 px-6 py-2 rounded-full bg-white text-black font-semibold text-base shadow hover:bg-[#00FF57]/10 transition">
-                        Contact Me
-                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#00FF57] text-black">
+                    <Button
+                        href="mailto:mejabidurotimi@gmail.com"
+                        variant="primary"
+                        icon={
                             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
-                        </span>
-                    </a>
+                        }
+                    >
+                        Contact Me
+                    </Button>
                 </div>
             </nav>
             {/* Main Content */}
@@ -81,14 +85,18 @@ export default function Hero() {
                 {/* Right Side Intro */}
                 <div className="flex-1 flex flex-col items-end justify-center max-w-md">
                     <div className="text-white text-right text-lg md:text-xl font-normal mb-8">
-                        <span className="font-bold">Hi, I am Timmy</span> <span className="text-neutral-300">I am a creative engineer with a passion for building beautiful and functional digital experiences.</span>
+                        <span className="font-bold">Hi, I'm Timmy</span> <span className="text-neutral-300">I am a creative engineer with a passion for creating beautiful and functional digital experiences.</span>
                     </div>
-                    <a href="#" className="flex items-center gap-2 px-6 py-2 rounded-full bg-white text-black font-semibold text-base shadow hover:bg-[#00FF57]/10 transition">
-                        Let&apos;s Discuss
-                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#00FF57] text-black">
+                    <Button
+                        href="mailto:mejabidurotimi@gmail.com"
+                        variant="primary"
+                        icon={
                             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>
-                        </span>
-                    </a>
+                        }
+                        className="mt-2"
+                    >
+                        Let&apos;s Discuss
+                    </Button>
                 </div>
             </div>
         </section>
