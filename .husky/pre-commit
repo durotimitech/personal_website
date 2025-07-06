@@ -5,5 +5,7 @@ echo "Running lint-staged"
 npx lint-staged
 
 
+
+
 echo "Building project"
 npm run build
