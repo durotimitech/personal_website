@@ -2,168 +2,124 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
+
+const projects = [
+    {
+        number: '001.',
+        title: 'RAVEN CLAW',
+        year: '2025',
+        type: 'E-COMMERCE',
+        image: '/images/project-raven.jpg',
+        link: '#',
+        large: false,
+    },
+    {
+        number: '002.',
+        title: 'WILLOW STUDIO',
+        year: '2024',
+        type: 'STUDIO',
+        image: '/images/project-willow.jpg',
+        link: '#',
+        large: false,
+    },
+    {
+        number: '003.',
+        title: 'MAISON LAW',
+        year: '2024',
+        type: 'BRANDING',
+        image: '/images/project-maison.jpg',
+        link: '#',
+        large: true,
+    },
+    {
+        number: '004.',
+        title: 'MYSTIC MEADOWS',
+        year: '2023',
+        type: 'AGENCY',
+        image: '/images/project-mystic.jpg',
+        link: '#',
+        large: false,
+    },
+    {
+        number: '005.',
+        title: 'SYNLAB',
+        year: '2023',
+        type: 'WEBSITE',
+        image: '/images/project-synclab.jpg',
+        link: '#',
+        large: false,
+    },
+];
+
+type Project = {
+    number: string;
+    title: string;
+    year: string;
+    type: string;
+    image: string;
+    link: string;
+    large?: boolean;
+};
 
 export default function WebDevelopmentPage() {
     return (
-        <main>
-            {/* Hero Section */}
-            <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-                <div className="container-custom text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="space-y-6"
-                    >
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-5xl md:text-7xl font-bold text-gray-900"
-                        >
-                            Web <span className="text-blue-600">Development</span>
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
-                        >
-                            Creating modern, responsive, and user-friendly websites that drive results and deliver exceptional user experiences.
-                        </motion.p>
-                    </motion.div>
+        <main className="min-h-screen w-full bg-white py-16 px-4 md:px-0">
+            <div className="max-w-6xl mx-auto">
+                {/* Label */}
+                <div className="flex items-center gap-2 text-sm font-semibold mb-8">
+                    <span className="w-3 h-3 rounded-full bg-[#00FF57] inline-block" />
+                    PROJECT
                 </div>
-            </section>
-
-            {/* Services Offered */}
-            <section className="section-padding bg-white">
-                <div className="container-custom">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                            What I Offer
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Comprehensive web development solutions tailored to your specific needs and goals.
-                        </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: 'Custom Websites',
-                                description: 'Tailored websites built from scratch to perfectly match your brand and requirements.',
-                                icon: '🌐'
-                            },
-                            {
-                                title: 'E-commerce Solutions',
-                                description: 'Full-featured online stores with secure payment processing and inventory management.',
-                                icon: '🛒'
-                            },
-                            {
-                                title: 'Web Applications',
-                                description: 'Complex web applications with advanced functionality and user management.',
-                                icon: '⚙️'
-                            },
-                            {
-                                title: 'Responsive Design',
-                                description: 'Websites that look and work perfectly on all devices and screen sizes.',
-                                icon: '📱'
-                            },
-                            {
-                                title: 'SEO Optimization',
-                                description: 'Search engine optimized websites to improve visibility and drive organic traffic.',
-                                icon: '🔍'
-                            },
-                            {
-                                title: 'Maintenance & Support',
-                                description: 'Ongoing maintenance, updates, and technical support to keep your site running smoothly.',
-                                icon: '🔧'
-                            }
-                        ].map((service, index) => (
-                            <motion.div
-                                key={service.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-gray-50 rounded-2xl p-8 text-center"
-                            >
-                                <div className="text-4xl mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                                <p className="text-gray-600">{service.description}</p>
-                            </motion.div>
-                        ))}
+                {/* Project Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    {/* First row: 2 projects */}
+                    <div className="flex flex-col gap-10">
+                        <ProjectCard {...projects[0]} />
+                        <ProjectCard {...projects[3]} />
                     </div>
-                </div>
-            </section>
-
-            {/* Technologies */}
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                            Technologies I Use
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Modern, reliable technologies to build fast, secure, and scalable web solutions.
-                        </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                        {[
-                            'React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'PHP',
-                            'WordPress', 'Shopify', 'MongoDB', 'PostgreSQL', 'AWS', 'Vercel'
-                        ].map((tech, index) => (
-                            <motion.div
-                                key={tech}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
-                            >
-                                <p className="font-semibold text-gray-900">{tech}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="section-padding bg-blue-600 text-white">
-                <div className="container-custom text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="space-y-6"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            Ready to Build Your Website?
-                        </h2>
-                        <p className="text-xl max-w-3xl mx-auto mb-8">
-                            Let&apos;s discuss your project and create a website that perfectly represents your brand and achieves your goals.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/#contact" className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-                                Get Started
-                            </Link>
-                            <Link href="/" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-                                Back to Home
-                            </Link>
+                    {/* Second column: 3 projects stacked */}
+                    <div className="flex flex-col gap-10">
+                        <div className="flex flex-col md:flex-row gap-10">
+                            <ProjectCard {...projects[1]} />
+                            <ProjectCard {...projects[2]} large />
                         </div>
-                    </motion.div>
+                        <ProjectCard {...projects[4]} />
+                    </div>
                 </div>
-            </section>
+            </div>
         </main>
+    );
+}
+
+function ProjectCard({ number, title, year, type, image, link, large }: Project) {
+    return (
+        <motion.div
+            whileHover={{ scale: 1.02 }}
+            className={`group relative rounded-2xl overflow-hidden bg-neutral-100 ${large ? 'md:w-[420px] md:h-[260px]' : 'md:w-[320px] md:h-[200px]'} w-full h-full shadow`}
+        >
+            <Link href={link} className="block w-full h-full">
+                <Image
+                    src={image}
+                    alt={title}
+                    width={large ? 420 : 320}
+                    height={large ? 260 : 200}
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                />
+                {/* Overlay Button */}
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40">
+                    <span className="bg-black text-white px-6 py-2 rounded-md font-semibold text-sm tracking-wider">VIEW</span>
+                </span>
+            </Link>
+            {/* Project Info */}
+            <div className="flex items-center justify-between mt-4 px-1">
+                <span className="text-xs text-neutral-400 font-mono">{number}</span>
+                <span className="font-bold text-base md:text-lg tracking-tight">{title}</span>
+                <span className="text-xs text-neutral-400 uppercase">{type}</span>
+            </div>
+            <div className="flex items-center justify-between px-1 mt-1">
+                <span className="text-xs text-neutral-400">{year}</span>
+            </div>
+        </motion.div>
     );
 } 

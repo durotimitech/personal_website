@@ -27,7 +27,7 @@ const articles = [
 export default function EditorialSection() {
     return (
         <section className="w-full bg-white py-16 px-4 md:px-0 relative">
-            <div className="max-w-6xl mx-auto relative">
+            <div className="max-w-5xl mx-auto relative overflow-hidden rounded-2xl p-8">
                 {/* Borders */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-0 left-0 w-full h-0.5 border-t border-neutral-200" />

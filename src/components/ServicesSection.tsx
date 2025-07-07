@@ -1,50 +1,57 @@
 'use client';
 
 import Image from 'next/image';
+import Button from './ui/Button';
 
 const services = [
     {
         number: '01',
-        title: 'WEB DESIGN & WEBFLOW',
-        description: 'Crafting custom, responsive websites with seamless design and powerful Webflow development.',
+        title: 'WEB DEVELOPMENT',
+        description: 'Crafting beautiful, custom, responsive websites and applications with seamless designs.',
         image: null,
+        link: '/web-development',
     },
     {
         number: '02',
         title: 'DESIGN & DEVELOPMENT',
         description: 'Building seamless, high-performing websites that unite strategy and creativity scalable code.',
         image: null,
+        link: '/design-development',
     },
     {
         number: null,
         title: null,
         description: null,
         image: '/images/service-phone.jpg',
+        link: null,
     },
     {
         number: null,
         title: null,
         description: null,
         image: '/images/service-jacket.jpg',
+        link: null,
     },
     {
         number: '03',
         title: 'PHOTOGRAPHY & STYLING',
         description: 'Capturing brand stories with striking visuals, curated styling, and intentional creative direction.',
         image: null,
+        link: '/photography',
     },
     {
         number: '04',
         title: 'MOTION & INTERACTION',
         description: 'Bringing interfaces to life through thoughtful motion and engaging user interactions.',
         image: null,
+        link: '/motion-interaction',
     },
 ];
 
 export default function ServicesSection() {
     return (
-        <section className="w-full bg-white py-16 px-4 md:px-0">
-            <div className="max-w-6xl mx-auto relative">
+        <section id="services" className="w-full bg-white py-16 px-4 md:px-0">
+            <div className="max-w-5xl mx-auto relative overflow-hidden rounded-2xl p-8">
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-0 left-0 w-full h-0.5 border-t border-neutral-200" />
                     <div className="absolute bottom-0 left-0 w-full h-0.5 border-b border-neutral-200" />
@@ -74,7 +81,14 @@ export default function ServicesSection() {
                                     <div className="text-base text-neutral-700 mb-6 flex-1">
                                         {service.description}
                                     </div>
-                                    <button className="self-start px-6 py-2 rounded-full bg-white border border-neutral-300 text-black font-medium text-sm shadow hover:bg-neutral-50 transition">Read more</button>
+                                    <Button
+                                        className="self-start"
+                                        variant="primary"
+                                        href={service.link || '#'}
+                                        icon={<svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>}
+                                    >
+                                        Read more
+                                    </Button>
                                 </div>
                             )
                         ))}

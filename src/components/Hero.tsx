@@ -4,10 +4,7 @@ import Button from './ui/Button';
 
 const menu = [
     { label: 'Home', href: '#', dropdown: false },
-    // { label: 'About', href: '#' },
-    // { label: 'Pages', href: '#', dropdown: true },
-    // { label: 'Project', href: '#' },
-    // { label: 'Service', href: '#' },
+    { label: 'Services', href: '#services' },
 ];
 
 export default function Hero() {

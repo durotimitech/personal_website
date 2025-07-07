@@ -9,16 +9,16 @@ export default function Footer() {
                 {/* Watermark */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
                     <span className="text-[8vw] md:text-[6vw] font-extrabold text-neutral-200 opacity-60 tracking-tight leading-none uppercase whitespace-nowrap z-0">
-                        ATRALICK
+                        CREATED BY TIMMY
                     </span>
                 </div>
                 <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-12">
                     {/* Left: Brand, description, email */}
                     <div className="flex flex-col gap-6 md:col-span-1">
                         <div>
-                            <div className="font-extrabold text-lg mb-2">ATRALICK</div>
+                            <div className="font-extrabold text-lg mb-2">Created By Timmy</div>
                             <div className="text-sm text-neutral-700 mb-4 max-w-xs">
-                                Whether you're launching a new brand or refining an existing one, we're here to turn your ideas into impactful.
+                                Whether you want to build a new software project or plan your wedding or capture your best moments, I&apos;m here to turn your ideas into impactful, tangible products.
                             </div>
                             <form className="flex items-center bg-white rounded-full shadow px-4 py-2 w-full max-w-xs">
                                 <input
@@ -77,12 +77,11 @@ export default function Footer() {
                 </div>
                 {/* Bottom row */}
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between mt-16 pt-8 border-t border-neutral-200 text-xs text-neutral-500">
-                    <div className="mb-4 md:mb-0">© Copyright 2025</div>
+                    <div className="mb-4 md:mb-0">© Copyright 2025 Mejabi Oluwadurotimi. All rights reserved.</div>
                     <div className="flex gap-6">
-                        <a href="#" className="hover:underline">Instagram</a>
-                        <a href="#" className="hover:underline">Linkedin</a>
-                        <a href="#" className="hover:underline">Dribbble</a>
-                        <a href="#" className="hover:underline">Behance</a>
+                        <a href="https://www.instagram.com/mejabidurotimi/" className="hover:underline">Instagram</a>
+                        <a href="https://www.linkedin.com/in/oluwadurotimi-mejabi-86046117a/" className="hover:underline">Linkedin</a>
+                        <a href="https://github.com/durotimitech" className="hover:underline">Github</a>
                     </div>
                 </div>
             </div>

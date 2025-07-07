@@ -115,7 +115,7 @@ export default function EventPlanningPage() {
                             Ready to Plan Your Event?
                         </h2>
                         <p className="text-xl max-w-3xl mx-auto mb-8">
-                            Let's discuss your event vision and create an unforgettable celebration.
+                            Let&apos;s discuss your event vision and create an unforgettable celebration.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/#contact" className="bg-white text-pink-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
