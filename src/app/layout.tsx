@@ -7,8 +7,8 @@ import "./globals.css";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mejabi Oluwadurotimi – Creative Designer",
-  description: "Transforming ideas into stunning visuals and brand experiences.",
+  title: "Mejabi Oluwadurotimi - Creative Engineer",
+  description: "Transforming ideas into stunning visuals and experiences.",
 };
 
 export default function RootLayout({

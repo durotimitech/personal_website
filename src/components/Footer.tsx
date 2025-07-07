@@ -1,8 +1,8 @@
 'use client';
-import { useState } from 'react';
+// import { useState } from 'react';
+import Button from './ui/Button';
 
 export default function Footer() {
-    const [email, setEmail] = useState('');
     return (
         <footer className="w-full bg-neutral-50 rounded-2xl mt-16 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 py-16 relative">
@@ -20,59 +20,17 @@ export default function Footer() {
                             <div className="text-sm text-neutral-700 mb-4 max-w-xs">
                                 Whether you want to build a new software project or plan your wedding or capture your best moments, I&apos;m here to turn your ideas into impactful, tangible products.
                             </div>
-                            <form className="flex items-center bg-white rounded-full shadow px-4 py-2 w-full max-w-xs">
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
-                                    placeholder="Enter your email"
-                                    className="flex-1 bg-transparent outline-none text-sm text-neutral-800 placeholder-neutral-400"
-                                />
-                                <button type="submit" className="ml-2 w-8 h-8 rounded-full bg-[#00FF57] flex items-center justify-center text-white text-lg shadow hover:bg-[#00e650] transition">
-                                    <span className="inline-block">→</span>
-                                </button>
-                            </form>
                         </div>
                     </div>
                     {/* Center: Let's Discuss button */}
                     <div className="hidden md:flex flex-col items-center justify-center col-span-1">
-                        <button className="px-8 py-3 rounded-full bg-black text-white font-medium text-base flex items-center gap-2 shadow-lg">
+                        <Button
+                            href="mailto:mejabidurotimi@gmail.com"
+                            className="px-8 py-3 rounded-full bg-black text-black font-medium text-base flex items-center gap-2 shadow-lg"
+                        >
                             Let&apos;s Discuss
                             <span className="w-7 h-7 rounded-full bg-[#00FF57] flex items-center justify-center ml-2 text-black text-lg">→</span>
-                        </button>
-                    </div>
-                    {/* Right: Link columns */}
-                    <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
-                        <div>
-                            <div className="font-semibold text-sm mb-3">Pages</div>
-                            <ul className="space-y-2 text-sm text-neutral-700">
-                                <li><a href="#" className="hover:underline">Home</a></li>
-                                <li><a href="#" className="hover:underline">Pages</a></li>
-                                <li><a href="#" className="hover:underline">About</a></li>
-                                <li><a href="#" className="hover:underline">Work</a></li>
-                                <li><a href="#" className="hover:underline">Service</a></li>
-                                <li><a href="#" className="hover:underline">Blog</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div className="font-semibold text-sm mb-3">Inner Pages</div>
-                            <ul className="space-y-2 text-sm text-neutral-700">
-                                <li><a href="#" className="hover:underline">Project single</a></li>
-                                <li><a href="#" className="hover:underline">Service single</a></li>
-                                <li><a href="#" className="hover:underline">Blog single</a></li>
-                                <li><a href="#" className="hover:underline">Pricing single</a></li>
-                                <li><a href="#" className="hover:underline">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div className="font-semibold text-sm mb-3">Utility Pages</div>
-                            <ul className="space-y-2 text-sm text-neutral-700">
-                                <li><a href="#" className="hover:underline">Style guide</a></li>
-                                <li><a href="#" className="hover:underline">License</a></li>
-                                <li><a href="#" className="hover:underline">Changelog</a></li>
-                                <li><a href="#" className="hover:underline">404</a></li>
-                            </ul>
-                        </div>
+                        </Button>
                     </div>
                 </div>
                 {/* Bottom row */}

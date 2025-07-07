@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Rule: Run Linter After Each Coding Iteration
+
+## Match
+.*
+
+## Linting Policy
+- After generating or modifying any code (components, pages, utils, etc.), the agent must **run the project linter immediately**.
+- The linter should use the configuration provided in `.eslintrc.js` or `.eslintrc.json`.
+- Any reported errors or warnings should be addressed **automatically if safe to do so**, or flagged in comments if manual review is needed.
+- Prefer using ESLint with the following plugins enabled:
+  - `eslint:recommended`
+  - `@typescript-eslint/recommended`
+  - `plugin:react/recommended`
+  - `plugin:tailwindcss/recommended`
+  - `plugin:jsx-a11y/recommended` (for accessibility)
+  - `plugin:prettier/recommended`
+
+## Linter Execution Guidelines
+- Remove unused variables, imports, and functions.
+- Fix bad or duplicated JSX structure.
+- Ensure consistent formatting (spacing, indentation, trailing commas).
+- Catch TypeScript errors and fix incorrect types.
+- Use Prettier for final formatting after linting.
+
+## Example
+- ✅ After creating a new `Hero.tsx` component:
+  - Run: `pnpm lint` or `npx eslint . --fix`
+  - Fix issues (e.g., unused `import React`, missing `alt` text)
+  - Apply Prettier: `npx prettier --write .` if applicable
+
+## Notes
+- Always ensure the final code passes linting before considering it “done.”
+- If you create a new project or file structure, include an `.eslintrc` setup and Prettier config.

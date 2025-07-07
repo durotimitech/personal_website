@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Button from './ui/Button';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const services = [
     {
@@ -72,24 +73,27 @@ export default function ServicesSection() {
                                     <Image src={service.image} alt="Service" width={340} height={260} className="object-cover w-full h-full" />
                                 </div>
                             ) : (
-                                <div key={i} className="rounded-2xl bg-neutral-100 p-8 flex flex-col h-full shadow-sm">
-                                    <div className="flex items-center gap-2 mb-2">
+                                <motion.div
+                                    key={i}
+                                    whileHover={{ scale: 1.04 }}
+                                    className={`relative group rounded-2xl bg-neutral-100 p-8 flex flex-col h-full shadow-sm overflow-hidden transition-transform duration-300${service.link ? ' cursor-pointer' : ''}`}
+                                >
+                                    {/* Glow effect */}
+                                    <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 shadow-[0_0_48px_0_rgba(0,255,87,0.22)] group-hover:shadow-[0_0_120px_24px_rgba(0,255,87,0.35)]" />
+                                    {service.link && (
+                                        <Link href={service.link} className="absolute inset-0 z-20">
+                                            <span className="sr-only">Go to {service.title}</span>
+                                        </Link>
+                                    )}
+                                    <div className="flex items-center gap-2 mb-2 relative z-10 pointer-events-none">
                                         <span className="text-lg font-bold text-neutral-400">{service.number}</span>
                                         <span className="text-xl font-extrabold tracking-tight">{service.title}</span>
                                     </div>
-                                    <div className="border-t border-neutral-200 my-4" />
-                                    <div className="text-base text-neutral-700 mb-6 flex-1">
+                                    <div className="border-t border-neutral-200 my-4 relative z-10 pointer-events-none" />
+                                    <div className="text-base text-neutral-700 mb-6 flex-1 relative z-10 pointer-events-none">
                                         {service.description}
                                     </div>
-                                    <Button
-                                        className="self-start"
-                                        variant="primary"
-                                        href={service.link || '#'}
-                                        icon={<svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" /></svg>}
-                                    >
-                                        Read more
-                                    </Button>
-                                </div>
+                                </motion.div>
                             )
                         ))}
                     </div>
