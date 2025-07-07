@@ -6,8 +6,8 @@
   --divider: #e5e5e5;
   --card: #fff;
   --shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
 }
 
 body {

@@ -18,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className + " bg-[#f5f4f0] text-[#181818] min-h-screen"}>
+      <body
+        className={
+          montserrat.className + " bg-[#f5f4f0] text-[#181818] min-h-screen"
+        }
+      >
         <div className="max-w-7xl mx-auto w-full min-h-screen flex flex-col">
           <Hero />
           <main className="flex-1">{children}</main>

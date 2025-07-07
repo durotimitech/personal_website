@@ -3,7 +3,7 @@ description:
 globs: 
 alwaysApply: true
 ---
-# Rule: Run Linter After Each Coding Iteration
+# Rule: Run Linter After Each Coding Iteration and Use Framer Motion for Animations
 
 ## Match
 .*
@@ -27,12 +27,22 @@ alwaysApply: true
 - Catch TypeScript errors and fix incorrect types.
 - Use Prettier for final formatting after linting.
 
+## Animation & Interactions with Framer Motion
+- Every **new page** or **component** must include **animated transitions** using `framer-motion`.
+- Use `motion.div` (or `motion.section`, etc.) for layout animations like fade-in, slide-up, or staggered reveal.
+- Include **micro-interactions** on hover, tap, or scroll — such as button hover effects, card scale on hover, or menu animations.
+- Animate **presence transitions** using `<AnimatePresence>` when mounting/unmounting routes or modals.
+- Avoid overuse: animations should be subtle, meaningful, and performance-friendly.
+- Respect user preferences: support `prefers-reduced-motion`.
+
 ## Example
-- ✅ After creating a new `Hero.tsx` component:
-  - Run: `pnpm lint` or `npx eslint . --fix`
-  - Fix issues (e.g., unused `import React`, missing `alt` text)
-  - Apply Prettier: `npx prettier --write .` if applicable
+- ✅ After creating a new `AboutPage.tsx`:
+  - Wrap main content with `motion.div` and apply entrance animation.
+  - Use `whileHover={{ scale: 1.05 }}` for buttons or cards.
+  - Ensure animations are defined inside the component and scoped appropriately.
+  - Then run: `npx eslint . --fix` and `npx prettier --write .`
 
 ## Notes
-- Always ensure the final code passes linting before considering it “done.”
-- If you create a new project or file structure, include an `.eslintrc` setup and Prettier config.
+- Always ensure the final code passes linting and includes appropriate animations using Framer Motion.
+- For consistency, store reusable motion configs (e.g. variants) in a central file like `lib/motion.ts`.
+- If you create a new project or file structure, include `.eslintrc` and Framer Motion setup.

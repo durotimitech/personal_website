@@ -1,200 +1,184 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
+
+const photographs = [
+  {
+    src: "/images/photography/8.jpg",
+    alt: "Gallery 8",
+    className: "col-span-2 row-span-2",
+    width: 600,
+    height: 600,
+  },
+  {
+    src: "/images/photography/9.jpg",
+    alt: "Gallery 9",
+    className: "col-span-2 row-span-2",
+    width: 600,
+    height: 600,
+  },
+  {
+    src: "/images/photography/10.jpg",
+    alt: "Gallery 10",
+    className: "col-span-2 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/1.jpg",
+    alt: "Gallery 1",
+    className: "col-span-3 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/2.jpg",
+    alt: "Gallery 2",
+    className: "col-span-3 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/3.jpg",
+    alt: "Gallery 3",
+    className: "col-span-2 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/4.jpg",
+    alt: "Gallery 4",
+    className: "col-span-2 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/5.jpg",
+    alt: "Gallery 5",
+    className: "col-span-2 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/6.jpg",
+    alt: "Gallery 6",
+    className: "col-span-2 row-span-2",
+    width: 600,
+    height: 600,
+  },
+  {
+    src: "/images/photography/7.jpg",
+    alt: "Gallery 7",
+    className: "col-span-2 row-span-2",
+    width: 600,
+    height: 600,
+  },
+  {
+    src: "/images/photography/11.jpg",
+    alt: "Gallery 11",
+    className: "col-span-3 row-span-2",
+    width: 900,
+    height: 600,
+  },
+  {
+    src: "/images/photography/12.jpg",
+    alt: "Gallery 12",
+    className: "col-span-3 row-span-2",
+    width: 600,
+    height: 600,
+  },
+];
+
+const photoVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
+  }),
+};
 
 export default function PhotographyPage() {
-    return (
-        <main>
-            {/* Hero Section */}
-            <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100">
-                <div className="container-custom text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="space-y-6"
-                    >
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-5xl md:text-7xl font-bold text-gray-900"
-                        >
-                            <span className="text-green-600">Photography</span>
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
-                        >
-                            Capturing moments that tell your story through professional photography that preserves memories for a lifetime.
-                        </motion.p>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Services Offered */}
-            <section className="section-padding bg-white">
-                <div className="container-custom">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                            Photography Services
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Professional photography services for all your special moments and business needs.
-                        </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: 'Wedding Photography',
-                                description: 'Beautiful wedding photography that captures every precious moment of your special day.',
-                                icon: '💒'
-                            },
-                            {
-                                title: 'Portrait Photography',
-                                description: 'Professional portraits for individuals, families, and corporate headshots.',
-                                icon: '👤'
-                            },
-                            {
-                                title: 'Event Photography',
-                                description: 'Comprehensive coverage of corporate events, parties, and special celebrations.',
-                                icon: '🎉'
-                            },
-                            {
-                                title: 'Product Photography',
-                                description: 'High-quality product photography for e-commerce and marketing materials.',
-                                icon: '📦'
-                            },
-                            {
-                                title: 'Real Estate Photography',
-                                description: 'Stunning property photography that showcases homes and commercial spaces.',
-                                icon: '🏠'
-                            },
-                            {
-                                title: 'Photo Editing',
-                                description: 'Professional photo editing and retouching to enhance your images.',
-                                icon: '🎨'
-                            }
-                        ].map((service) => (
-                            <motion.div
-                                key={service.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="bg-gray-50 rounded-2xl p-8 text-center"
-                            >
-                                <div className="text-4xl mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                                <p className="text-gray-600">{service.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Equipment & Style */}
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                            My Approach
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Professional equipment and a unique style that brings out the best in every subject.
-                        </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="space-y-6"
-                        >
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Professional Equipment</h3>
-                            <div className="space-y-4">
-                                {[
-                                    'Canon EOS R5 & R6',
-                                    'Professional L-series lenses',
-                                    'Studio lighting equipment',
-                                    'High-quality editing software',
-                                    'Backup equipment for reliability'
-                                ].map((item) => (
-                                    <div key={item} className="flex items-center space-x-3">
-                                        <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                                        <span className="text-gray-700">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="space-y-6"
-                        >
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Photography Style</h3>
-                            <div className="space-y-4">
-                                {[
-                                    'Natural and candid moments',
-                                    'Creative composition and angles',
-                                    'Attention to lighting and detail',
-                                    'Timeless and elegant aesthetic',
-                                    'Storytelling through images'
-                                ].map((item) => (
-                                    <div key={item} className="flex items-center space-x-3">
-                                        <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                                        <span className="text-gray-700">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="section-padding bg-green-600 text-white">
-                <div className="container-custom text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="space-y-6"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            Ready to Capture Your Moments?
-                        </h2>
-                        <p className="text-xl max-w-3xl mx-auto mb-8">
-                            Let&apos;s discuss your photography needs and create beautiful images that you&apos;ll treasure forever.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/#contact" className="bg-white text-green-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-                                Book a Session
-                            </Link>
-                            <Link href="/" className="border-2 border-white text-white hover:bg-white hover:text-green-600 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-                                Back to Home
-                            </Link>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-        </main>
-    );
-} 
+  const [selected, setSelected] = useState<null | { src: string; alt: string }>(
+    null,
+  );
+  return (
+    <motion.main
+      className="min-h-screen w-full bg-[#e5dfd6] py-16 px-4 md:px-10 flex items-center justify-center"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      <div className="max-w-5xl w-full">
+        <motion.h1
+          className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 text-neutral-900 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+        >
+          Photography
+        </motion.h1>
+        <div className="grid grid-cols-6 grid-rows-6 gap-4 md:gap-6">
+          {photographs.map((photo, i) => (
+            <motion.button
+              key={i}
+              className={`${photo.className} rounded-2xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#00FF57]`}
+              onClick={() => setSelected({ src: photo.src, alt: photo.alt })}
+              aria-label={`View ${photo.alt}`}
+              custom={i}
+              variants={photoVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                className="w-full h-full object-cover"
+              />
+            </motion.button>
+          ))}
+        </div>
+        <AnimatePresence>
+          {selected && (
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelected(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
+                className="relative max-w-3xl w-full max-h-[90vh] flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={selected.src}
+                  alt={selected.alt}
+                  width={1200}
+                  height={900}
+                  className="rounded-2xl w-auto h-auto max-h-[80vh] max-w-full shadow-2xl"
+                />
+                <button
+                  onClick={() => setSelected(null)}
+                  className="absolute top-2 right-2 bg-white/80 hover:bg-white text-black rounded-full w-9 h-9 flex items-center justify-center text-2xl font-bold shadow"
+                  aria-label="Close full image"
+                >
+                  &times;
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.main>
+  );
+}
