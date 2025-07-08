@@ -8,7 +8,9 @@ interface BlogPostPageProps {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = await getPostBySlug(params.slug);
+  
   if (!post) return <div>Not found</div>;
+
   return (
     <main className="min-h-screen w-full bg-[var(--background)] py-16 px-4 md:px-0 flex flex-col items-center">
       <SeoHead {...post} />

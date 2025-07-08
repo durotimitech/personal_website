@@ -1,7 +1,7 @@
 ---
 title: "How to Choose the Perfect Event Videographer in Ireland"
 description: "A guide to finding the right videographer for your event in Ireland, with tips on style, budget, and questions to ask."
-slug: "choose-event-videographer-ireland"
+slug: "second-post"
 date: "2025-07-10"
 coverImage: "/images/blog/event-videographer.jpg"
 tags: ["event", "videography", "Ireland"]

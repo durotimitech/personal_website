@@ -10,11 +10,17 @@
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
+    "gray-matter": "^4.0.3",
     "next": "15.3.5",
     "next-seo": "^6.8.0",
     "next-sitemap": "^4.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "rehype-highlight": "^7.0.2",
+    "rehype-stringify": "^10.0.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "remark-rehype": "^11.1.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
