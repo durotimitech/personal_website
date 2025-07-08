@@ -17,8 +17,8 @@ export default function RatesPage() {
                 </p>
                 <div className="flex flex-col gap-4 w-full items-center">
                     <Link href="/rates/photography" className="text-lg font-semibold text-[var(--text)] hover:underline">Photography Rates</Link>
-                    {/* <Link href="/rates/videography" className="text-lg font-semibold text-[var(--text)] hover:underline">Videography Rates</Link> */}
-                    {/* <Link href="/rates/event-planning" className="text-lg font-semibold text-[var(--text)] hover:underline">Event Planning Rates</Link> */}
+                    <Link href="/rates/videography" className="text-lg font-semibold text-[var(--text)] hover:underline">Videography Rates</Link>
+                    <Link href="/rates/event-planning" className="text-lg font-semibold text-[var(--text)] hover:underline">Event Planning Rates</Link>
                 </div>
             </motion.div>
         </main>

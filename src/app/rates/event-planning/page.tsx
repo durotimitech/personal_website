@@ -175,35 +175,29 @@ export default function EventPlanningRatesPage() {
                     prices in EUR (€)
                 </p>
                 {/* Billing Toggle */}
-                <div className="flex items-center justify-center gap-2 mb-12 bg-[var(--card)] rounded-full p-1 shadow-inner w-full max-w-md">
-                    <button
-                        className={`flex-1 px-6 py-2 rounded-full font-semibold transition text-sm md:text-base ${billing === "wedding" ? "bg-[var(--background)] text-[var(--text)] shadow" : "text-[var(--divider)] hover:text-[var(--text)]"}`}
-                        onClick={() => setBilling("wedding")}
-                        aria-pressed={billing === "wedding"}
-                    >
-                        Wedding
-                    </button>
-                    <button
-                        className={`flex-1 px-6 py-2 rounded-full font-semibold transition text-sm md:text-base ${billing === "private" ? "bg-[var(--background)] text-[var(--text)] shadow" : "text-[var(--divider)] hover:text-[var(--text)]"}`}
-                        onClick={() => setBilling("private")}
-                        aria-pressed={billing === "private"}
-                    >
-                        Private
-                    </button>
-                    <button
-                        className={`flex-1 px-6 py-2 rounded-full font-semibold transition text-sm md:text-base ${billing === "corporate" ? "bg-[var(--background)] text-[var(--text)] shadow" : "text-[var(--divider)] hover:text-[var(--text)]"}`}
-                        onClick={() => setBilling("corporate")}
-                        aria-pressed={billing === "corporate"}
-                    >
-                        Corporate
-                    </button>
-                    <button
-                        className={`flex-1 px-6 py-2 rounded-full font-semibold transition text-sm md:text-base ${billing === "addons" ? "bg-[var(--background)] text-[var(--text)] shadow" : "text-[var(--divider)] hover:text-[var(--text)]"}`}
-                        onClick={() => setBilling("addons")}
-                        aria-pressed={billing === "addons"}
-                    >
-                        Add-Ons
-                    </button>
+                <div className="relative flex items-center justify-center gap-2 mb-12 bg-[var(--card)] rounded-full p-1 shadow-inner w-full max-w-md">
+                    {[
+                        { label: "Wedding", value: "wedding" },
+                        { label: "Private", value: "private" },
+                        { label: "Corporate", value: "corporate" },
+                        { label: "Add-Ons", value: "addons" },
+                    ].map((tab) => (
+                        <button
+                            key={tab.value}
+                            className={`relative flex-1 px-6 py-2 rounded-full font-semibold transition text-sm md:text-base z-10 ${billing === tab.value ? "text-[var(--text)] font-bold" : "text-[var(--divider)]"}`}
+                            onClick={() => setBilling(tab.value)}
+                            aria-pressed={billing === tab.value}
+                        >
+                            {billing === tab.value && (
+                                <motion.div
+                                    layoutId="tabHighlight"
+                                    className="absolute inset-0 bg-[var(--background)] shadow rounded-full z-0"
+                                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                                />
+                            )}
+                            <span className="relative z-10">{tab.label}</span>
+                        </button>
+                    ))}
                 </div>
                 {/* Plans Grid */}
                 {billing === "wedding" && (
