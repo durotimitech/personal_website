@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { NextSeo } from 'next-seo';
+import Button from "@/components/ui/Button";
 
 const projects = [
   {
@@ -69,6 +70,32 @@ export default function WebDevelopmentPage() {
             {/* <ProjectCard {...projects[3]} /> */}
           </div>
         </div>
+        <motion.div
+          className="w-full flex flex-col items-center justify-center bg-[var(--card)] rounded-2xl shadow-lg p-8 my-12 text-center"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        >
+          <Image
+            src="/images/timmy-mejabi-portrait-limerick.jpg"
+            alt="Timmy Mejabi, professional web developer, photographer, videographer and event planner in Limerick"
+            width={96}
+            height={96}
+            className="w-24 h-24 rounded-full border-4 border-[var(--divider)] shadow-lg object-cover mb-4"
+            priority
+          />
+          <p className="text-base md:text-lg text-[var(--text)] max-w-2xl mx-auto">
+            I&apos;m a creative web developer based in Limerick, Ireland, passionate about building beautiful, functional, and accessible digital experiences. My background in photography and videography gives me a unique eye for design and storytelling, which I bring to every website and app I create. Whether you&apos;re a business, a creative, or a couple planning your big day, I&apos;ll help you turn your vision into a fast, modern, and memorable web presence. Let&apos;s build something amazing together.
+          </p>
+          <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.96 }}>
+            <Button href="mailto:mejabidurotimi@gmail.com" variant="primary" className="mt-4">
+              Contact Me
+              <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
+                →
+              </span>
+            </Button>
+          </motion.div>
+        </motion.div>
       </motion.div>
       {/* TODO: Replace with actual website URL */}
       <NextSeo

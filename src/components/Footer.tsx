@@ -50,15 +50,16 @@ export default function Footer() {
             <Link href="/photography" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
               Photography
             </Link>
-            {/* <Link href="/event-planning" className="text-sm font-bold text-neutral-700 hover:underline">
-              Event Planning
-            </Link>
-            <Link href="/web-development" className="text-sm font-bold text-neutral-700 hover:underline">
+            <Link href="/videography" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+              Videography
+            </Link> 
+            <Link href="/event-planning" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+              Wedding & Event Planning
+              </Link>
+              <Link href="/web-development" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
               Web Development
             </Link>
-            <Link href="/web-development" className="text-sm font-bold text-neutral-700 hover:underline">
-              Videography
-            </Link> */}
+            
 
           </div>
         </div>

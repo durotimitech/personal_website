@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { NextSeo } from 'next-seo';
+import Image from "next/image";
+import Button from "@/components/ui/Button";
 
 const videos = [
   {
@@ -65,13 +67,77 @@ export default function VideographyPage() {
           Videography
         </motion.h1>
         <div className="grid grid-cols-6 grid-rows-6 gap-4 md:gap-6">
-          {videos.map((video, i) => (
+          {videos.slice(0, 3).map((video, i) => (
             <motion.button
               key={video.id}
               className={`${video.className} rounded-2xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--divider)] bg-[var(--card)] group`}
               onClick={() => setSelected({ id: video.id, title: video.title })}
               aria-label={`Play ${video.title}`}
               custom={i}
+              variants={videoVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <div className="relative w-full h-full aspect-video flex items-center justify-center">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full object-cover rounded-2xl border-0"
+                  tabIndex={-1}
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <svg className="w-16 h-16 text-[var(--background)] opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+            </motion.button>
+          ))}
+          <motion.div
+            className="col-span-6 row-span-2 flex flex-col items-center justify-center bg-[var(--card)] rounded-2xl shadow-lg p-8 my-2 text-center"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          >
+            <Image
+              src="/images/timmy-mejabi-portrait-limerick.jpg"
+              alt="Timmy Mejabi, professional videographer, photographer, web developer and event planner in Limerick"
+              width={96}
+              height={96}
+              className="w-24 h-24 rounded-full border-4 border-[var(--divider)] shadow-lg object-cover mb-4"
+              priority
+            />
+            <p className="text-base md:text-lg text-[var(--text)] max-w-2xl mx-auto">
+              I&apos;m a passionate videographer based in Limerick, Ireland, specializing in cinematic storytelling that captures more than just visuals. I capture feeling. I&apos;ve worked on weddings, lifestyle shoots, events, and creative projects where emotion, detail, and movement matter most. My approach is simple; I listen. I empathize. I create. I put myself in your shoes to understand what matters most to you, then I turn that vision into a film you&apos;ll never forget. Every story is different. Every frame is personal. If you&apos;re looking for a video that doesn&apos;t just document your day but brings it back to life every time you hit play, let&apos;s talk.
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 justify-center mt-6">
+              <motion.div whileHover={{ scale: 1.03 }}>
+                <Button href="mailto:mejabidurotimi@gmail.com" variant="primary">
+                  Contact Me
+                  <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
+                    &rarr;
+                  </span>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.03 }}>
+                <Button href="/rates/videography" variant="secondary">
+                  See Rates
+                  <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
+                    €
+                  </span>
+                </Button>
+              </motion.div>
+            </div>
+          </motion.div>
+          {videos.slice(3).map((video, i) => (
+            <motion.button
+              key={video.id}
+              className={`${video.className} rounded-2xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--divider)] bg-[var(--card)] group`}
+              onClick={() => setSelected({ id: video.id, title: video.title })}
+              aria-label={`Play ${video.title}`}
+              custom={i + 3}
               variants={videoVariants}
               initial="hidden"
               animate="visible"

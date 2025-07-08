@@ -13,44 +13,44 @@ const services = [
     image: null,
     link: "/photography",
   },
-  // {
-  //   number: "02",
-  //   title: "Videography",
-  //   description:
-  //     "Creating stories through cinematic visuals and storytelling.",
-  //   image: null,
-  //   link: "/videography",
-  // },
-  // {
-  //   number: null,
-  //   title: null,
-  //   description: null,
-  //   image: "/images/photography/2.jpg",
-  //   link: null,
-  // },
-  // {
-  //   number: "03",
-  //   title: "WEB DEVELOPMENT",
-  //   description:
-  //     "Crafting beautiful, custom, responsive websites and applications with seamless designs.",
-  //   image: null,
-  //   link: "/web-development",
-  // },
-  // {
-  //   number: null,
-  //   title: null,
-  //   description: null,
-  //   image: "/images/photography/10.jpg",
-  //   link: null,
-  // },
-  // {
-  //   number: "04",
-  //   title: "MOTION & INTERACTION",
-  //   description:
-  //     "Bringing interfaces to life through thoughtful motion and engaging user interactions.",
-  //   image: null,
-  //   link: "/motion-interaction",
-  // },
+  {
+    number: "02",
+    title: "Videography",
+    description:
+      "I create cinematic videos that bring your moments to life. Crafted with empathy, detail, and story at heart.",
+    image: null,
+    link: "/videography",
+  },
+  {
+    number: null,
+    title: null,
+    description: null,
+    image: "/images/photography/man-with-star-wars-helmet-ireland.jpg",
+    link: null,
+  },
+  {
+    number: "03",
+    title: "WEB DEVELOPMENT",
+    description:
+      "I help creatives, founders, and brands build websites that work with thoughtful design, and a focus on real impact.",
+    image: null,
+    link: "/web-development",
+  },
+  {
+    number: null,
+    title: null,
+    description: null,
+    image: "/images/photography/man-in-wilderness-ireland.jpg",
+    link: null,
+  },
+  {
+    number: "04",
+    title: "Wedding & Event Planning",
+    description:
+      "I help couples, families, and brands plan and execute events that are unforgettable.",
+    image: null,
+    link: "/event-planning",
+  },
 ];
 
 const cardVariants = {
