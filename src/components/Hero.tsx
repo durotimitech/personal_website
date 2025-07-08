@@ -18,7 +18,6 @@ export default function Hero() {
         <div className="flex items-center gap-2 font-extrabold text-[var(--text)] text-xl tracking-tight">
           CREATED BY TIMMY
           <span className="text-[var(--text)] text-2xl align-super">*</span>
-
         </div>
         {/* Menu */}
         <div className="hidden md:flex gap-8 text-[var(--text)] font-medium text-base">
@@ -93,16 +92,18 @@ export default function Hero() {
             width={96}
             height={96}
             className="w-64 h-64 rounded-full border-4 border-[var(--divider)] shadow-lg object-cover"
-            style={{ background: 'var(--card)' }}
+            style={{ background: "var(--card)" }}
             priority
           />
         </div>
         {/* Right Side Intro */}
         <div className="flex-1 flex flex-col items-end justify-center max-w-md">
           <div className="text-[var(--text)] text-right text-lg md:text-xl font-normal mb-8">
-            <span className="font-bold">Hi, I&apos;m Timmy</span>{' '}
+            <span className="font-bold">Hi, I&apos;m Timmy</span>{" "}
             <span className="text-[var(--text)]">
-              a photographer, videographer, web developer and event planner based in Ireland with over 5 years of experience turning stories into stunning visuals.
+              a photographer, videographer, web developer and event planner
+              based in Ireland with over 5 years of experience turning stories
+              into stunning visuals.
             </span>
           </div>
           <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.96 }}>

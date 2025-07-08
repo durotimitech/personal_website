@@ -68,7 +68,15 @@ export default function AboutSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h2 className="text-xl md:text-2xl font-extrabold leading-snug">
-              I help people preserve emotions, moments, and visions that matter. With over 5 years in photography, videography, and web development, I’ve worked with couples, creators, and small businesses to tell stories that feel honest and human. From the quiet moments between lovers to the launch of a long-dreamt project, my work is about connection. Every shoot, every project is deeply personal, and I treat it that way. I believe creativity begins with empathy. I see what you see. I feel what you feel. And then, I help you bring it to life, beautifully.
+              I help people preserve emotions, moments, and visions that matter.
+              With over 5 years in photography, videography, and web
+              development, I’ve worked with couples, creators, and small
+              businesses to tell stories that feel honest and human. From the
+              quiet moments between lovers to the launch of a long-dreamt
+              project, my work is about connection. Every shoot, every project
+              is deeply personal, and I treat it that way. I believe creativity
+              begins with empathy. I see what you see. I feel what you feel. And
+              then, I help you bring it to life, beautifully.
             </h2>
           </motion.div>
         </div>

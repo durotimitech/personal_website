@@ -44,23 +44,36 @@ export default function Footer() {
           </div>
           {/* Right Section */}
           <div className="hidden md:flex flex-col items-end justify-center col-span-1 pr-2">
-            <Link href="/" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+            <Link
+              href="/"
+              className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full"
+            >
               Home
             </Link>
-            <Link href="/photography" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+            <Link
+              href="/photography"
+              className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full"
+            >
               Photography
             </Link>
-            <Link href="/videography" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+            <Link
+              href="/videography"
+              className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full"
+            >
               Videography
-            </Link> 
-            <Link href="/event-planning" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+            </Link>
+            <Link
+              href="/event-planning"
+              className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full"
+            >
               Wedding & Event Planning
-              </Link>
-              <Link href="/web-development" className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full">
+            </Link>
+            <Link
+              href="/web-development"
+              className="text-lg font-extrabold text-[var(--text)] hover:underline text-left w-full"
+            >
               Web Development
             </Link>
-            
-
           </div>
         </div>
         {/* Bottom row */}

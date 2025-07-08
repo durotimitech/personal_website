@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { NextSeo } from 'next-seo';
+import { NextSeo } from "next-seo";
 import Button from "@/components/ui/Button";
 
 const projects = [
@@ -74,7 +74,7 @@ export default function WebDevelopmentPage() {
           className="w-full flex flex-col items-center justify-center bg-[var(--card)] rounded-2xl shadow-lg p-8 my-12 text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
         >
           <Image
             src="/images/timmy-mejabi-portrait-limerick.jpg"
@@ -85,10 +85,21 @@ export default function WebDevelopmentPage() {
             priority
           />
           <p className="text-base md:text-lg text-[var(--text)] max-w-2xl mx-auto">
-            I&apos;m a creative web developer based in Limerick, Ireland, passionate about building beautiful, functional, and accessible digital experiences. My background in photography and videography gives me a unique eye for design and storytelling, which I bring to every website and app I create. Whether you&apos;re a business, a creative, or a couple planning your big day, I&apos;ll help you turn your vision into a fast, modern, and memorable web presence. Let&apos;s build something amazing together.
+            I&apos;m a creative web developer based in Limerick, Ireland,
+            passionate about building beautiful, functional, and accessible
+            digital experiences. My background in photography and videography
+            gives me a unique eye for design and storytelling, which I bring to
+            every website and app I create. Whether you&apos;re a business, a
+            creative, or a couple planning your big day, I&apos;ll help you turn
+            your vision into a fast, modern, and memorable web presence.
+            Let&apos;s build something amazing together.
           </p>
           <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.96 }}>
-            <Button href="mailto:mejabidurotimi@gmail.com" variant="primary" className="mt-4">
+            <Button
+              href="mailto:mejabidurotimi@gmail.com"
+              variant="primary"
+              className="mt-4"
+            >
               Contact Me
               <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
                 →
@@ -103,23 +114,25 @@ export default function WebDevelopmentPage() {
         description="Browse the web development portfolio of Mejabi Oluwadurotimi, a creative engineer and web developer based in Limerick, Ireland. Building beautiful, functional websites for businesses and creatives."
         canonical="https://yourwebsite.com/web-development"
         openGraph={{
-          url: 'https://yourwebsite.com/web-development',
-          title: 'Web Development Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi',
-          description: 'Browse the web development portfolio of Mejabi Oluwadurotimi, a creative engineer and web developer based in Limerick, Ireland. Building beautiful, functional websites for businesses and creatives.',
+          url: "https://yourwebsite.com/web-development",
+          title:
+            "Web Development Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi",
+          description:
+            "Browse the web development portfolio of Mejabi Oluwadurotimi, a creative engineer and web developer based in Limerick, Ireland. Building beautiful, functional websites for businesses and creatives.",
           images: [
             {
-              url: 'https://yourwebsite.com/logo.png',
+              url: "https://yourwebsite.com/logo.png",
               width: 500,
               height: 500,
-              alt: 'Mejabi Oluwadurotimi Logo',
+              alt: "Mejabi Oluwadurotimi Logo",
             },
           ],
-          site_name: 'Mejabi Oluwadurotimi',
+          site_name: "Mejabi Oluwadurotimi",
         }}
         twitter={{
-          handle: '@yourhandle',
-          site: '@yourhandle',
-          cardType: 'summary_large_image',
+          handle: "@yourhandle",
+          site: "@yourhandle",
+          cardType: "summary_large_image",
         }}
       />
     </motion.main>

@@ -25,7 +25,8 @@ export default function Button({
     "flex items-center gap-2 px-6 py-2 rounded-full font-semibold text-base shadow transition focus:outline-none focus:ring-2 focus:ring-offset-2";
   const variants: Record<string, string> = {
     primary: "bg-[var(--text)] text-[var(--background)] hover:bg-black/90",
-    secondary: "bg-[var(--card)] text-[var(--text)] border border-[var(--divider)] hover:bg-[var(--background)]",
+    secondary:
+      "bg-[var(--card)] text-[var(--text)] border border-[var(--divider)] hover:bg-[var(--background)]",
     black: "bg-[var(--text)] text-[var(--background)] hover:bg-black/90",
   };
   const content = (
@@ -50,12 +51,12 @@ export default function Button({
     );
   }
   return (
-    <button 
+    <button
       type={type}
       onClick={onClick}
       className={`${base} ${variants[variant]} ${className}`}
-      >
+    >
       {content}
-      </button>
+    </button>
   );
 }

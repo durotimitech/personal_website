@@ -3,13 +3,6 @@ description:
 globs: 
 alwaysApply: true
 ---
-Here's a **Cursor Rule in `.mdc` format** that instructs Cursor to **always reuse available components** (like a prebuilt `Button` component) instead of creating new ones from scratch.
-
----
-
-### ✅ Cursor Rule (.mdc) – Reuse Existing Components
-
-````mdc
 # Rule: Always use existing components when available
 
 ## Match
@@ -45,5 +38,4 @@ Here's a **Cursor Rule in `.mdc` format** that instructs Cursor to **always reus
 * This rule applies to **all UI creation tasks**, especially buttons, forms, and repeatable patterns.
 * Ensure **consistent branding, accessibility, and styling** by reusing components across the entire app.
 
-```
 

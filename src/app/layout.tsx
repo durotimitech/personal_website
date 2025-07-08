@@ -9,7 +9,8 @@ import SeoProvider from "@/components/SeoProvider";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mejabi Oluwadurotimi - Photographer, Videographer, Web Developer and Event Planner",
+  title:
+    "Mejabi Oluwadurotimi - Photographer, Videographer, Web Developer and Event Planner",
   description: "Transforming ideas into stunning visuals and experiences.",
 };
 
@@ -18,7 +19,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   // TODO: Replace with actual website URL
   return (
     <html lang="en">
@@ -27,7 +27,8 @@ export default function RootLayout({
       </head>
       <body
         className={
-          montserrat.className + " bg-[var(--background)] text-[var(--text)] min-h-screen"
+          montserrat.className +
+          " bg-[var(--background)] text-[var(--text)] min-h-screen"
         }
       >
         <SeoProvider />
@@ -52,21 +53,21 @@ export default function RootLayout({
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "name": "Mejabi Oluwadurotimi Photography & Web",
-                "image": "https://yourwebsite.com/logo.png",
-                "address": {
+                name: "Mejabi Oluwadurotimi Photography & Web",
+                image: "https://yourwebsite.com/logo.png",
+                address: {
                   "@type": "PostalAddress",
-                  "streetAddress": "[Your Street]",
-                  "addressLocality": "Limerick",
-                  "addressRegion": "Munster",
-                  "postalCode": "V94",
-                  "addressCountry": "IE"
+                  streetAddress: "[Your Street]",
+                  addressLocality: "Limerick",
+                  addressRegion: "Munster",
+                  postalCode: "V94",
+                  addressCountry: "IE",
                 },
-                "url": "https://yourwebsite.com",
-                "telephone": "+353...",
-                "priceRange": "$$",
-                "openingHours": "Mo-Su 08:00-20:00"
-              })
+                url: "https://yourwebsite.com",
+                telephone: "+353...",
+                priceRange: "$$",
+                openingHours: "Mo-Su 08:00-20:00",
+              }),
             }}
           />
           <Hero />
