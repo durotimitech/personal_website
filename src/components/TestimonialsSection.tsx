@@ -9,7 +9,7 @@ const testimonials = [
     name: "Kaitochi Igbokwe",
     content:
       "It was such a pleasure working with Timmy. He was professional, creative, and easy to work with. I would highly recommend him to anyone looking for a photographer or videographer.",
-    avatar: "/images/testimonials/kaitochi_igbokwe.png",
+    avatar: "/images/testimonials/testimonial-kaitochi-igbokwe-limerick.jpg",
   },
   // Add more testimonials as needed
 ];
@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
             <div className="rounded-full overflow-hidden w-64 h-64 border border-[var(--divider)]">
               <Image
                 src={testimonial.avatar}
-                alt={testimonial.name}
+                alt={`Kaitochi Igbokwe, testimonial for Timmy Mejabi, photographer in Limerick`}
                 width={112}
                 height={112}
                 className="object-cover w-full h-full"

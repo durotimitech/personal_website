@@ -3,88 +3,89 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { NextSeo } from 'next-seo';
 
 const photographs = [
   {
-    src: "/images/photography/8.jpg",
-    alt: "Gallery 8",
+    src: "/images/photography/lady-smiling-while-holding-a-flower-in-limerick.jpg",
+    alt: "Outdoors photography in Limerick, Ireland",
     className: "col-span-2 row-span-2",
     width: 600,
     height: 600,
   },
   {
-    src: "/images/photography/9.jpg",
-    alt: "Gallery 9",
+    src: "/images/photography/pre-wedding-shoot-limerick.jpg",
+    alt: "Pre-wedding shoot in Limerick city",
     className: "col-span-2 row-span-2",
     width: 600,
     height: 600,
   },
   {
-    src: "/images/photography/10.jpg",
-    alt: "Gallery 10",
+    src: "/images/photography/outdoor-wedding-ireland.jpg",
+    alt: "Outdoor wedding ceremony in Ireland with scenic backdrop",
     className: "col-span-2 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/1.jpg",
-    alt: "Gallery 1",
+    src: "/images/photography/lady-kneeling-in-bed-of-flowers-limerick.jpg",
+    alt: "Lady kneeling in bed of flowers in Limerick, Ireland",
     className: "col-span-3 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/2.jpg",
-    alt: "Gallery 2",
+    src: "/images/photography/man-with-star-wars-helmet-ireland.jpg",
+    alt: "Man with Star Wars helmet in Ireland",
     className: "col-span-3 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/3.jpg",
-    alt: "Gallery 3",
+    src: "/images/photography/potrait-of-lady-outdoors-ireland.jpg",
+    alt: "Potrait of lady outdoors in Ireland",
     className: "col-span-2 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/4.jpg",
-    alt: "Gallery 4",
+    src: "/images/photography/engagement-proposal-shoot-ireland.jpg",
+    alt: "Engagement proposal shoot in Ireland",
     className: "col-span-2 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/5.jpg",
-    alt: "Gallery 5",
+    src: "/images/photography/couple-in-love-ireland.jpg",
+    alt: "Couple in love in Ireland",
     className: "col-span-2 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/6.jpg",
-    alt: "Gallery 6",
+    src: "/images/photography/studio-portrait-ireland.jpg",
+    alt: "Studio portrait in Ireland",
     className: "col-span-2 row-span-2",
     width: 600,
     height: 600,
   },
   {
-    src: "/images/photography/7.jpg",
-    alt: "Gallery 7",
+    src: "/images/photography/lifestyle-photography-limerick.jpg",
+    alt: "Lifestyle photography session in Limerick city",
     className: "col-span-2 row-span-2",
     width: 600,
     height: 600,
   },
   {
-    src: "/images/photography/11.jpg",
-    alt: "Gallery 11",
+    src: "/images/photography/girl-laying-on-floor-limerick.jpg",
+    alt: "Girl laying on floor in Limerick, Ireland",
     className: "col-span-3 row-span-2",
     width: 900,
     height: 600,
   },
   {
-    src: "/images/photography/12.jpg",
-    alt: "Gallery 12",
+    src: "/images/photography/man-in-wilderness-ireland.jpg",
+    alt: "Man in wilderness in Ireland",
     className: "col-span-3 row-span-2",
     width: 600,
     height: 600,
@@ -111,6 +112,31 @@ export default function PhotographyPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
+      {/* TODO: Replace with actual website URL */}
+      <NextSeo
+        title="Wedding & Event Photography Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi"
+        description="Explore the wedding, event, and travel photography portfolio of Mejabi Oluwadurotimi, a professional photographer based in Limerick, Ireland. Capturing real moments and beautiful stories."
+        canonical="https://yourwebsite.com/photography"
+        openGraph={{
+          url: 'https://yourwebsite.com/photography',
+          title: 'Wedding & Event Photography Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi',
+          description: 'Explore the wedding, event, and travel photography portfolio of Mejabi Oluwadurotimi, a professional photographer based in Limerick, Ireland. Capturing real moments and beautiful stories.',
+          images: [
+            {
+              url: 'https://yourwebsite.com/logo.png',
+              width: 500,
+              height: 500,
+              alt: 'Mejabi Oluwadurotimi Logo',
+            },
+          ],
+          site_name: 'Mejabi Oluwadurotimi',
+        }}
+        twitter={{
+          handle: '@yourhandle',
+          site: '@yourhandle',
+          cardType: 'summary_large_image',
+        }}
+      />
       <div className="max-w-5xl w-full">
         <motion.h1
           className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 text-[var(--text)] text-center"
@@ -150,8 +176,8 @@ export default function PhotographyPage() {
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
           >
             <Image
-              src="/images/avatar.jpg"
-              alt="Timmy Mejabi portrait"
+              src="/images/timmy-mejabi-portrait-limerick.jpg"
+              alt="Timmy Mejabi, professional photographer, videographer, web developer and event planner in Limerick"
               width={96}
               height={96}
               className="w-24 h-24 rounded-full border-4 border-[var(--divider)] shadow-lg object-cover mb-4"

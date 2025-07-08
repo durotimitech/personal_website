@@ -88,8 +88,8 @@ export default function Hero() {
         {/* Avatar in the middle */}
         <div className="my-6 md:my-0 md:mx-8 flex-shrink-0 flex justify-center items-center">
           <Image
-            src="/images/avatar.jpg"
-            alt="Timmy Mejabi portrait"
+            src="/images/timmy-mejabi-portrait-limerick.jpg"
+            alt="Timmy Mejabi, professional photographer, videographer, web developer and event planner in Limerick"
             width={96}
             height={96}
             className="w-64 h-64 rounded-full border-4 border-[var(--divider)] shadow-lg object-cover"

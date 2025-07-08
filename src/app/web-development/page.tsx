@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { NextSeo } from 'next-seo';
 
 const projects = [
   {
@@ -69,6 +70,31 @@ export default function WebDevelopmentPage() {
           </div>
         </div>
       </motion.div>
+      {/* TODO: Replace with actual website URL */}
+      <NextSeo
+        title="Web Development Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi"
+        description="Browse the web development portfolio of Mejabi Oluwadurotimi, a creative engineer and web developer based in Limerick, Ireland. Building beautiful, functional websites for businesses and creatives."
+        canonical="https://yourwebsite.com/web-development"
+        openGraph={{
+          url: 'https://yourwebsite.com/web-development',
+          title: 'Web Development Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi',
+          description: 'Browse the web development portfolio of Mejabi Oluwadurotimi, a creative engineer and web developer based in Limerick, Ireland. Building beautiful, functional websites for businesses and creatives.',
+          images: [
+            {
+              url: 'https://yourwebsite.com/logo.png',
+              width: 500,
+              height: 500,
+              alt: 'Mejabi Oluwadurotimi Logo',
+            },
+          ],
+          site_name: 'Mejabi Oluwadurotimi',
+        }}
+        twitter={{
+          handle: '@yourhandle',
+          site: '@yourhandle',
+          cardType: 'summary_large_image',
+        }}
+      />
     </motion.main>
   );
 }

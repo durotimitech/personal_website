@@ -2,26 +2,29 @@ import Image from "next/image";
 
 const articles = [
   {
-    image: "/images/article-1.jpg",
+    image: "/images/ai-branding-article-cover.jpg",
     date: "February 5, 2023",
     readTime: "9 min read",
     title: "What We're Building, Thinking, Exploring, and Creating Next",
     tag: "Artificial intelligent",
+    alt: "AI branding and digital innovation article cover image",
   },
   {
-    image: "/images/article-2.jpg",
+    image: "/images/studio-visual-experiments-cover.jpg",
     date: "August 17, 2024",
     readTime: "2 min read",
     title: "Studio Thoughts, Visual Experiments, and Brand Evolution Insights",
     tag: "Artificial intelligent",
+    alt: "Studio visual experiments and brand evolution insights cover",
   },
   {
-    image: "/images/article-3.jpg",
+    image: "/images/digital-brand-experiences-cover.jpg",
     date: "January 7, 2025",
     readTime: "4 min read",
     title:
       "The Art of Building Beautiful, Purposeful Digital Brand Experiences",
     tag: "Artificial intelligent",
+    alt: "Digital brand experiences and purposeful design article cover",
   },
 ];
 
@@ -49,7 +52,7 @@ export default function EditorialSection() {
                 <div className="w-full aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-[var(--background)]">
                   <Image
                     src={article.image}
-                    alt={article.title}
+                    alt={article.alt}
                     width={400}
                     height={300}
                     className="object-cover w-full h-full"

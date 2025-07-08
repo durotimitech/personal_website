@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <AboutSection />
       <ServicesSection />
-      <TestimonialsSection />
+      <TestimonialsSection /> 
       {/* <EditorialSection /> */}
     </main>
   );
