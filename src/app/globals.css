@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -5,9 +6,9 @@
   --text: #181818;
   --divider: #b8ae9c;
   --card: #ede6d6;
-  --shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.10);
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  --font-serif: "Roboto", serif;
+  --font-sans: "Montserrat", sans-serif;
 }
 
 body {
