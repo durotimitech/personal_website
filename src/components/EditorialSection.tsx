@@ -27,14 +27,14 @@ const articles = [
 
 export default function EditorialSection() {
   return (
-    <section className="w-full bg-white py-16 px-4 md:px-0 relative">
+    <section className="w-full bg-[var(--card)] py-16 px-4 md:px-0 relative">
       <div className="max-w-5xl mx-auto relative overflow-hidden rounded-2xl p-8">
         {/* Borders */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-0.5 border-t border-neutral-200" />
-          <div className="absolute bottom-0 left-0 w-full h-0.5 border-b border-neutral-200" />
-          <div className="absolute top-0 left-0 h-full w-0.5 border-l border-neutral-200" />
-          <div className="absolute top-0 right-0 h-full w-0.5 border-r border-neutral-200" />
+          <div className="absolute top-0 left-0 w-full h-0.5 border-t border-[var(--divider)]" />
+          <div className="absolute bottom-0 left-0 w-full h-0.5 border-b border-[var(--divider)]" />
+          <div className="absolute top-0 left-0 h-full w-0.5 border-l border-[var(--divider)]" />
+          <div className="absolute top-0 right-0 h-full w-0.5 border-r border-[var(--divider)]" />
         </div>
         <div className="relative">
           {/* Label */}
@@ -46,7 +46,7 @@ export default function EditorialSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {articles.map((article, i) => (
               <div key={i} className="flex flex-col">
-                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-neutral-100">
+                <div className="w-full aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-[var(--background)]">
                   <Image
                     src={article.image}
                     alt={article.title}
@@ -55,14 +55,14 @@ export default function EditorialSection() {
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="text-xs text-neutral-500 mb-1">
+                <div className="text-xs text-[var(--divider)] mb-1">
                   {article.date} — {article.readTime}
                 </div>
                 <div className="text-lg font-semibold text-black mb-2 leading-snug">
                   {article.title}
                 </div>
                 <div className="flex items-center justify-between mt-auto pt-2">
-                  <span className="text-xs text-neutral-500">
+                  <span className="text-xs text-[var(--divider)]">
                     {article.tag}
                   </span>
                   <button

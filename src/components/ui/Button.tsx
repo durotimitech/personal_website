@@ -24,9 +24,9 @@ export default function Button({
   const base =
     "flex items-center gap-2 px-6 py-2 rounded-full font-semibold text-base shadow transition focus:outline-none focus:ring-2 focus:ring-offset-2";
   const variants: Record<string, string> = {
-    primary: "bg-white text-black hover:bg-[#00FF57]/10",
-    secondary: "bg-[#00FF57] text-white hover:bg-[#00e650]",
-    black: "bg-black text-white hover:bg-neutral-900",
+    primary: "bg-[var(--text)] text-[var(--background)] hover:bg-black/90",
+    secondary: "bg-[var(--card)] text-[var(--text)] border border-[var(--divider)] hover:bg-[var(--background)]",
+    black: "bg-[var(--text)] text-[var(--background)] hover:bg-black/90",
   };
   const content = (
     <motion.span
@@ -36,7 +36,7 @@ export default function Button({
     >
       {children}
       {icon && (
-        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#00FF57] text-black">
+        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[var(--divider)] text-[var(--text)]">
           {icon}
         </span>
       )}
@@ -50,12 +50,12 @@ export default function Button({
     );
   }
   return (
-    <button
+    <button 
       type={type}
       onClick={onClick}
       className={`${base} ${variants[variant]} ${className}`}
-    >
+      >
       {content}
-    </button>
+      </button>
   );
 }

@@ -8,7 +8,7 @@ export default function AboutSection() {
     <motion.section
       role="region"
       aria-label="About Section"
-      className="w-full bg-white py-16 px-4 md:px-0"
+      className="w-full bg-[var(--card)] py-16 px-4 md:px-0"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -16,10 +16,10 @@ export default function AboutSection() {
     >
       <div className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-0.5 border-t border-neutral-200" />
-          <div className="absolute bottom-0 left-0 w-full h-0.5 border-b border-neutral-200" />
-          <div className="absolute top-0 left-0 h-full w-0.5 border-l border-neutral-200" />
-          <div className="absolute top-0 right-0 h-full w-0.5 border-r border-neutral-200" />
+          <div className="absolute top-0 left-0 w-full h-0.5 border-t border-[var(--divider)]" />
+          <div className="absolute bottom-0 left-0 w-full h-0.5 border-b border-[var(--divider)]" />
+          <div className="absolute top-0 left-0 h-full w-0.5 border-l border-[var(--divider)]" />
+          <div className="absolute top-0 right-0 h-full w-0.5 border-r border-[var(--divider)]" />
         </div>
         <div className="relative grid md:grid-cols-3 gap-8 items-center p-8">
           {/* Left: Label and button */}
@@ -31,7 +31,7 @@ export default function AboutSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <div className="flex items-center gap-2 text-sm font-semibold mb-2">
-              <span className="w-3 h-3 rounded-full bg-[#00FF57] inline-block" />
+              <span className="w-3 h-3 rounded-full bg-[var(--text)] inline-block" />
               WHAT I DO
             </div>
             <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.96 }}>
@@ -67,9 +67,8 @@ export default function AboutSection() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h2 className="text-2xl md:text-3xl font-extrabold leading-snug">
-              A Creative Engineer based in Limerick, Ireland, passionate about
-              creating visual and functional experiences.
+            <h2 className="text-xl md:text-2xl font-extrabold leading-snug">
+              I help people preserve emotions, moments, and visions that matter. With over 5 years in photography, videography, and web development, I’ve worked with couples, creators, and small businesses to tell stories that feel honest and human. From the quiet moments between lovers to the launch of a long-dreamt project, my work is about connection. Every shoot, every project is deeply personal, and I treat it that way. I believe creativity begins with empathy. I see what you see. I feel what you feel. And then, I help you bring it to life, beautifully.
             </h2>
           </motion.div>
         </div>

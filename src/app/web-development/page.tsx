@@ -34,13 +34,13 @@ const cardVariants = {
 export default function WebDevelopmentPage() {
   return (
     <motion.main
-      className="w-full bg-white py-16 px-4 md:px-10"
+      className="w-full bg-[var(--background)] py-16 px-4 md:px-10 text-[var(--text)]"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <motion.h1
-        className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 text-neutral-900 text-center"
+        className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 text-[var(--text)] text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
@@ -55,7 +55,7 @@ export default function WebDevelopmentPage() {
       >
         {/* Label */}
         <div className="flex items-center gap-2 text-sm font-semibold mb-8">
-          <span className="w-3 h-3 rounded-full bg-[#00FF57] inline-block" />
+          <span className="w-3 h-3 rounded-full bg-[var(--text)] inline-block" />
           PROJECTS
         </div>
         {/* Project Grid */}
@@ -91,7 +91,7 @@ function ProjectCard({
       animate="visible"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.97 }}
-      className={`group relative rounded-2xl overflow-hidden bg-neutral-100 ${large ? "md:w-[420px]" : "md:w-[320px]"} w-full shadow transition-all duration-300 cursor-pointer flex flex-col`}
+      className={`group relative rounded-2xl overflow-hidden bg-[var(--card)] ${large ? "md:w-[420px]" : "md:w-[320px]"} w-full shadow transition-all duration-300 cursor-pointer flex flex-col text-[var(--text)]`}
     >
       {/* Glow effect */}
       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 shadow-[0_0_48px_0_rgba(0,255,87,0.22)] group-hover:shadow-[0_0_120px_24px_rgba(0,255,87,0.35)]" />
@@ -121,12 +121,12 @@ function ProjectCard({
         />
       )}
       {/* Info section at the bottom */}
-      <div className="flex flex-col gap-1 px-4 py-4 bg-white rounded-b-2xl border-t border-neutral-200 mt-0">
+      <div className="flex flex-col gap-1 px-4 py-4 bg-[var(--card)] rounded-b-2xl border-t border-[var(--divider)] mt-0">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-neutral-400 font-mono font-bold">
+          <span className="text-xs text-[var(--divider)] font-mono font-bold">
             {number}
           </span>
-          <span className="text-xs text-neutral-400 font-mono font-bold">
+          <span className="text-xs text-[var(--divider)] font-mono font-bold">
             {title}
           </span>
         </div>

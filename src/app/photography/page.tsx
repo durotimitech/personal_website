@@ -106,14 +106,14 @@ export default function PhotographyPage() {
   );
   return (
     <motion.main
-      className="min-h-screen w-full bg-[#e5dfd6] py-16 px-4 md:px-10 flex items-center justify-center"
+      className="min-h-screen w-full bg-[var(--background)] py-16 px-4 md:px-10 flex items-center justify-center"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <div className="max-w-5xl w-full">
         <motion.h1
-          className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 text-neutral-900 text-center"
+          className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 text-[var(--text)] text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
@@ -121,13 +121,53 @@ export default function PhotographyPage() {
           Photography
         </motion.h1>
         <div className="grid grid-cols-6 grid-rows-6 gap-4 md:gap-6">
-          {photographs.map((photo, i) => (
+          {photographs.slice(0, 6).map((photo, i) => (
             <motion.button
               key={i}
-              className={`${photo.className} rounded-2xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#00FF57]`}
+              className={`${photo.className} rounded-2xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--divider)]`}
               onClick={() => setSelected({ src: photo.src, alt: photo.alt })}
               aria-label={`View ${photo.alt}`}
               custom={i}
+              variants={photoVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                className="w-full h-full object-cover"
+              />
+            </motion.button>
+          ))}
+          <motion.div
+            className="col-span-6 row-span-2 flex flex-col items-center justify-center bg-[var(--card)] rounded-2xl shadow-lg p-8 my-2 text-center"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          >
+            <Image
+              src="/images/avatar.jpg"
+              alt="Timmy Mejabi portrait"
+              width={96}
+              height={96}
+              className="w-24 h-24 rounded-full border-4 border-[var(--divider)] shadow-lg object-cover mb-4"
+              priority
+            />
+            <p className="text-base md:text-lg text-[var(--text)] max-w-2xl mx-auto">
+              I&apos;m a lifestyle and wedding photographer based in Ireland, and for me, photography isn&apos;t just about taking pictures. It&apos;s about capturing emotion, telling stories, and freezing those fleeting moments that make life beautiful. With over 5 years of experience behind the lens, I&apos;ve worked with couples, families, and creatives to document their most meaningful milestones. I believe the best photos come from connection, when you feel seen, comfortable, and free to be yourself. Whether it&apos;s the quiet glance between newlyweds or the laughter of a family in their backyard, I&apos;m here to help you hold onto it, not just for today, but forever.
+            </p>
+          </motion.div>
+          {photographs.slice(6).map((photo, i) => (
+            <motion.button
+              key={i + 6}
+              className={`${photo.className} rounded-2xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--divider)]`}
+              onClick={() => setSelected({ src: photo.src, alt: photo.alt })}
+              aria-label={`View ${photo.alt}`}
+              custom={i + 6}
               variants={photoVariants}
               initial="hidden"
               animate="visible"
@@ -169,7 +209,7 @@ export default function PhotographyPage() {
                 />
                 <button
                   onClick={() => setSelected(null)}
-                  className="absolute top-2 right-2 bg-white/80 hover:bg-white text-black rounded-full w-9 h-9 flex items-center justify-center text-2xl font-bold shadow"
+                  className="absolute top-2 right-2 bg-[var(--card)] hover:bg-[var(--divider)] text-[var(--text)] rounded-full w-9 h-9 flex items-center justify-center text-2xl font-bold shadow"
                   aria-label="Close full image"
                 >
                   &times;

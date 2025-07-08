@@ -7,7 +7,7 @@ import "./globals.css";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mejabi Oluwadurotimi - Creative Engineer",
+  title: "Mejabi Oluwadurotimi - Photographer, Videographer, Web Developer and Event Planner",
   description: "Transforming ideas into stunning visuals and experiences.",
 };
 
@@ -18,9 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo.png" />
+      </head>
       <body
         className={
-          montserrat.className + " bg-[#f5f4f0] text-[#181818] min-h-screen"
+          montserrat.className + " bg-[var(--background)] text-[var(--text)] min-h-screen"
         }
       >
         <div className="max-w-7xl mx-auto w-full min-h-screen flex flex-col">
