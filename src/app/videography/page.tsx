@@ -8,33 +8,38 @@ import Button from "@/components/ui/Button";
 
 const videos = [
   {
-    id: "dQw4w9WgXcQ",
-    title: "Sample Video 1",
+    id: "Us72WQmTDj4",
+    title: "Abiola x Minnat Wedding",
     className: "col-span-2 row-span-2",
   },
   {
-    id: "3JZ_D3ELwOQ",
-    title: "Sample Video 2",
+    id: "aZmuHWSgubE",
+    title: "Lifestyle Shoot",
     className: "col-span-2 row-span-2",
   },
   {
-    id: "L_jWHffIx5E",
-    title: "Sample Video 3",
+    id: "XrVIYNbLc9c",
+    title: "Music Video",
+    className: "col-span-2 row-span-2",
+  },
+  {
+    id: "J6zEdSwMV-c",
+    title: "Stuck! (Short Film)",
     className: "col-span-3 row-span-2",
   },
   {
-    id: "e-ORhEE9VVg",
-    title: "Sample Video 4",
-    className: "col-span-3 row-span-2",
-  },
-  {
-    id: "M7lc1UVf-VE",
-    title: "Sample Video 5",
+    id: "Qe84XavayEI",
+    title: "Wedding Video",
     className: "col-span-2 row-span-2",
   },
   {
-    id: "kXYiU_JCYtU",
-    title: "Sample Video 6",
+    id: "NLWwtg2RNr0",
+    title: "The Journey: Dawn of a New Era",
+    className: "col-span-2 row-span-2",
+  },
+  {
+    id: "Gz4MbcRkXXU",
+    title: "Shield Initiative",
     className: "col-span-2 row-span-2",
   },
 ];

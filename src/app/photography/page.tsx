@@ -50,6 +50,13 @@ const photographs = [
     height: 600,
   },
   {
+    src: "/images/photography/girl-posing-limerick-city.jpeg",
+    alt: "Girl posing in Limerick city",
+    className: "col-span-2 row-span-3",
+    width: 600,
+    height: 600,
+  },
+  {
     src: "/images/photography/engagement-proposal-shoot-ireland.jpg",
     alt: "Engagement proposal shoot in Ireland",
     className: "col-span-2 row-span-2",
@@ -91,6 +98,14 @@ const photographs = [
     width: 600,
     height: 600,
   },
+  {
+    src: "/images/photography/girl-jumping-in-limerick-city.jpeg",
+    alt: "Girl jumping in Limerick city",
+    className: "col-span-3 row-span-2",
+    width: 600,
+    height: 600,
+  },
+  
 ];
 
 const photoVariants = {
