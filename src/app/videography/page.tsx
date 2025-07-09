@@ -2,9 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+
 
 const videos = [
   {
@@ -228,33 +228,6 @@ export default function VideographyPage() {
           )}
         </AnimatePresence>
       </div>
-      {/* TODO: Replace with actual website URL */}
-      <NextSeo
-        title="Event & Wedding Videography Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi"
-        description="Discover the event and wedding videography portfolio of Mejabi Oluwadurotimi, a professional videographer based in Limerick, Ireland. Capturing your special moments in motion."
-        canonical="https://yourwebsite.com/videography"
-        openGraph={{
-          url: "https://yourwebsite.com/videography",
-          title:
-            "Event & Wedding Videography Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi",
-          description:
-            "Discover the event and wedding videography portfolio of Mejabi Oluwadurotimi, a professional videographer based in Limerick, Ireland. Capturing your special moments in motion.",
-          images: [
-            {
-              url: "https://yourwebsite.com/logo.png",
-              width: 500,
-              height: 500,
-              alt: "Mejabi Oluwadurotimi Logo",
-            },
-          ],
-          site_name: "Mejabi Oluwadurotimi",
-        }}
-        twitter={{
-          handle: "@yourhandle",
-          site: "@yourhandle",
-          cardType: "summary_large_image",
-        }}
-      />
     </motion.main>
   );
 }

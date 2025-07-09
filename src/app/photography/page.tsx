@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { NextSeo } from "next-seo";
+
 import Button from "@/components/ui/Button";
 
 const photographs = [
@@ -128,33 +128,7 @@ export default function PhotographyPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      {/* TODO: Replace with actual website URL */}
-      <NextSeo
-        title="Wedding & Event Photography Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi"
-        description="Explore the wedding, event, and travel photography portfolio of Mejabi Oluwadurotimi, a professional photographer based in Limerick, Ireland. Capturing real moments and beautiful stories."
-        canonical="https://yourwebsite.com/photography"
-        openGraph={{
-          url: "https://yourwebsite.com/photography",
-          title:
-            "Wedding & Event Photography Portfolio in Limerick, Ireland | Mejabi Oluwadurotimi",
-          description:
-            "Explore the wedding, event, and travel photography portfolio of Mejabi Oluwadurotimi, a professional photographer based in Limerick, Ireland. Capturing real moments and beautiful stories.",
-          images: [
-            {
-              url: "https://yourwebsite.com/logo.png",
-              width: 500,
-              height: 500,
-              alt: "Mejabi Oluwadurotimi Logo",
-            },
-          ],
-          site_name: "Mejabi Oluwadurotimi",
-        }}
-        twitter={{
-          handle: "@yourhandle",
-          site: "@yourhandle",
-          cardType: "summary_large_image",
-        }}
-      />
+
       <div className="max-w-5xl w-full">
         <motion.h1
           className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 text-[var(--text)] text-center"

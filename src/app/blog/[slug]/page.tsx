@@ -1,19 +1,53 @@
 import { getPostBySlug } from "@/lib/blog";
-import SeoHead from "@/components/SeoHead";
 import Image from "next/image";
+import { Metadata } from "next";
 
-interface BlogPostPageProps {
-  params: { slug: string };
+// TODO: Add SEO metadata
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+  
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: `https://yourwebsite.com/blog/${slug}`,
+      images: post.coverImage ? [
+        {
+          url: `https://yourwebsite.com${post.coverImage}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: post.coverImage ? [`https://yourwebsite.com${post.coverImage}`] : [],
+    },
+  };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) return <div>Not found</div>;
 
   return (
     <main className="min-h-screen w-full bg-[var(--background)] py-16 px-4 md:px-0 flex flex-col items-center">
-      <SeoHead {...post} />
       <article className="w-full max-w-3xl mx-auto bg-[var(--card)] rounded-2xl shadow-lg p-8">
         <header className="mb-8">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-2 text-[var(--text)]">

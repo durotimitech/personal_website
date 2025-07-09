@@ -4,7 +4,6 @@ import Script from "next/script";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import "./globals.css";
-import SeoProvider from "@/components/SeoProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -31,7 +30,6 @@ export default function RootLayout({
           " bg-[var(--background)] text-[var(--text)] min-h-screen"
         }
       >
-        <SeoProvider />
         <div className="max-w-7xl mx-auto w-full min-h-screen flex flex-col">
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"

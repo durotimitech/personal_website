@@ -6,9 +6,19 @@ import remarkRehype from "remark-rehype";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 
-const BLOG_DIR = path.join(process.cwd(), "content/blog");
+const BLOG_DIR = path.join(process.cwd(), "content");
 
-export async function getAllPosts() {
+export interface BlogPostPreview {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  coverImage?: string;
+  tags?: string[];
+  excerpt: string;
+}
+
+export async function getAllPosts(): Promise<BlogPostPreview[]> {
   const files = await fs.readdir(BLOG_DIR);
   const posts = await Promise.all(
     files
@@ -18,10 +28,13 @@ export async function getAllPosts() {
         const source = await fs.readFile(filePath, "utf8");
         const { data, content } = matter(source);
         return {
-          ...data,
+          title: data.title || "",
+          description: data.description || "",
           date: data.date || "",
-          excerpt: content.slice(0, 180) + (content.length > 180 ? "..." : ""),
           slug: data.slug || file.replace(/\.(md|mdx)$/, ""),
+          coverImage: data.coverImage,
+          tags: data.tags,
+          excerpt: content.slice(0, 180) + (content.length > 180 ? "..." : ""),
         };
       }),
   );
@@ -30,7 +43,17 @@ export async function getAllPosts() {
   );
 }
 
-export async function getPostBySlug(slug: string) {
+export interface BlogPost {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  coverImage?: string;
+  tags?: string[];
+  contentHtml: string;
+}
+
+export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const filePath = path.join(BLOG_DIR, `${slug}.md`);
 
   try {
@@ -43,8 +66,12 @@ export async function getPostBySlug(slug: string) {
       .process(content);
 
     return {
-      ...data,
+      title: data.title || "",
+      description: data.description || "",
+      date: data.date || "",
       slug,
+      coverImage: data.coverImage,
+      tags: data.tags,
       contentHtml: processed.toString(),
     };
   } catch (err) {
