@@ -12,10 +12,6 @@ export default function robots(): MetadataRoute.Robots {
           '/admin/',
           '/dashboard/',
           '/private/',
-          '*.json',
-          '*.xml',
-          '/sitemap.xml',
-          '/sitemap-*.xml',
         ],
       },
       {
@@ -86,10 +82,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/',
       },
     ],
-    sitemap: [
-      'https://mejabidurotimi.com/sitemap.xml',
-      'https://mejabidurotimi.com/sitemap-0.xml',
-    ],
+    sitemap: 'https://mejabidurotimi.com/sitemap.xml',
     host: 'https://mejabidurotimi.com',
   }
 } 

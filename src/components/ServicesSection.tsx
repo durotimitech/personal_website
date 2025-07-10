@@ -99,7 +99,10 @@ export default function ServicesSection() {
                 >
                   <Image
                     src={service.image}
-                    alt="Service"
+                    alt={service.image.includes('star-wars') 
+                      ? "Creative portrait of man with Star Wars helmet in Ireland - Timmy Mejabi Photography"
+                      : "Outdoor lifestyle photography of man in wilderness Ireland - Timmy Mejabi Photography"
+                    }
                     width={300}
                     height={300}
                     className="object-cover w-full h-full"
