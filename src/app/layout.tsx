@@ -155,7 +155,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-WCVFEFZPTZ', {
-                page_title: 'Created By Timmy Photography & Films',
+                page_title: 'Created By Timmy',
                 page_location: window.location.href,
                 anonymize_ip: true,
                 allow_google_signals: true,
@@ -172,7 +172,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "@id": "https://mejabidurotimi.com",
-                name: "Created By Timmy Photography & Films",
+                name: "Created By Timmy",
                 alternateName: "Created By Timmy",
                 description: "Creative and lifestyle wedding photography, videography, and event planning in Limerick and across Ireland.",
                 image: "https://mejabidurotimi.com/logo.png",
@@ -248,7 +248,7 @@ export default function RootLayout({
                 founder: {
                   "@type": "Person",
                   name: "Mejabi Durotimi",
-                  jobTitle: "Wedding Photographer & Videographer",
+                  jobTitle: "Wedding & Lifestyle Photographer & Videographer",
                   address: {
                     "@type": "PostalAddress",
                     addressLocality: "Limerick",
