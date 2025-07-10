@@ -1,0 +1,92 @@
+{
+  "name": "Created By Timmy - Photography, Videography, & Event Planning",
+  "short_name": "Created By Timmy",
+  "description": "Creative and lifestyle wedding photography, videography, and event planning for couples in Limerick and across Ireland.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#d6cbb6",
+  "theme_color": "#d6cbb6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["photography", "videography", "wedding", "events", "lifestyle"],
+  "lang": "en-IE",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/wedding-website-landing-page.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Wedding Photography",
+      "short_name": "Photography",
+      "description": "View wedding photography portfolio",
+      "url": "/photography",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Wedding Videography",
+      "short_name": "Videography",
+      "description": "View wedding videography portfolio",
+      "url": "/videography",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Event Planning",
+      "short_name": "Events",
+      "description": "Learn about event planning services",
+      "url": "/event-planning",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch for your wedding",
+      "url": "mailto:mejabidurotimi@gmail.com",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+} 

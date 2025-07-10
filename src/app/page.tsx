@@ -1,7 +1,7 @@
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import EditorialSection from "@/components/EditorialSection";
+// import TestimonialsSection from "@/components/TestimonialsSection";
+// import EditorialSection from "@/components/EditorialSection";
 
 export default function Home() {
   return (
