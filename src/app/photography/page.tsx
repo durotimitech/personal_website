@@ -200,14 +200,14 @@ export default function PhotographyPage() {
                   </span>
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.03 }}>
+              {/* <motion.div whileHover={{ scale: 1.03 }}>
                 <Button href="/rates/photography" variant="secondary">
                   See Rates
                   <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
                     €
                   </span>
                 </Button>
-              </motion.div>
+              </motion.div> */}
             </div>
           </motion.div>
           {photographs.slice(6).map((photo, i) => (

@@ -14,14 +14,6 @@ const services = [
     link: "/photography",
   },
   {
-    number: "02",
-    title: "Videography",
-    description:
-      "I create cinematic videos that bring your moments to life. Crafted with empathy, detail, and story at heart.",
-    image: null,
-    link: "/videography",
-  },
-  {
     number: null,
     title: null,
     description: null,
@@ -29,28 +21,36 @@ const services = [
     link: null,
   },
   {
-    number: "03",
-    title: "WEB DEVELOPMENT",
+    number: "02",
+    title: "Videography",
     description:
-      "I help creatives, founders, and brands build websites that work with thoughtful design, and a focus on real impact.",
+      "I create cinematic videos that bring your moments to life. Crafted with empathy, detail, and story at heart.",
     image: null,
-    link: "/web-development",
+    link: "/videography",
   },
-  {
-    number: null,
-    title: null,
-    description: null,
-    image: "/images/photography/man-in-wilderness-ireland.jpg",
-    link: null,
-  },
-  {
-    number: "04",
-    title: "Wedding & Event Planning",
-    description:
-      "I help couples, families, and brands plan and execute events that are unforgettable.",
-    image: null,
-    link: "/event-planning",
-  },
+  // {
+  //   number: "03",
+  //   title: "WEB DEVELOPMENT",
+  //   description:
+  //     "I help creatives, founders, and brands build websites that work with thoughtful design, and a focus on real impact.",
+  //   image: null,
+  //   link: "/web-development",
+  // },
+  // {
+  //   number: null,
+  //   title: null,
+  //   description: null,
+  //   image: "/images/photography/man-in-wilderness-ireland.jpg",
+  //   link: null,
+  // },
+  // {
+  //   number: "04",
+  //   title: "Wedding & Event Planning",
+  //   description:
+  //     "I help couples, families, and brands plan and execute events that are unforgettable.",
+  //   image: null,
+  //   link: "/event-planning",
+  // },
 ];
 
 const cardVariants = {
