@@ -1,29 +1,102 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import PhotoCarousel from "@/components/ui/PhotoCarousel";
+import RatesModal from "@/components/ui/RatesModal";
+import NavBar from "@/components/ui/NavBar";
 import Button from "@/components/ui/Button";
 
-const weddingPlans = [
+// Lifestyle Photography Packages
+const lifestylePackages = {
+  studio: [
+    {
+      name: "Mini Package",
+      price: "€200",
+      features: [
+        "Access to studio",
+        "Pre-Shoot Consultation",
+        "1 - 2 Hours",
+        "2 Looks",
+        "10 Edited Images",
+      ],
+    },
+    {
+      name: "Basic Package",
+      price: "€300",
+      features: [
+        "Access to studio",
+        "Pre-Shoot Consultation",
+        "2 - 4 Hours",
+        "4 Looks",
+        "25 Edited Images",
+      ],
+    },
+    {
+      name: "Premium Package",
+      price: "€500",
+      features: [
+        "Access to studio",
+        "Pre-Shoot Consultation",
+        "Full Day",
+        "8 Looks",
+        "40 Edited Images",
+      ],
+    },
+  ],
+  outdoor: [
+    {
+      name: "Mini Package",
+      price: "€150",
+      features: [
+        "Pre-Shoot Consultation",
+        "1 - 2 Hours",
+        "2 Looks",
+        "10 Edited Images",
+      ],
+    },
+    {
+      name: "Basic Package",
+      price: "€250",
+      features: [
+        "Pre-Shoot Consultation",
+        "2 - 4 Hours",
+        "4 Looks",
+        "25 Edited Images",
+      ],
+    },
+    {
+      name: "Premium Package",
+      price: "€400",
+      features: [
+        "Pre-Shoot Consultation",
+        "Full Day",
+        "8 Looks",
+        "40 Edited Images",
+      ],
+    },
+  ],
+};
+
+// Wedding Photography Packages
+const weddingPackages = [
   {
     name: "Essentials",
     description:
       "Perfect for intimate weddings or elopements. Get the key moments beautifully captured.",
-    price: "€300",
-    period: "",
-    features: ["4 hours coverage", "150+ edited photos", "Online gallery"],
+    price: "€250",
+    features: ["4 hours coverage", "150+ edited photos", "Pre-Wedding Consultation"],
     highlight: false,
   },
   {
     name: "Classic",
     description:
       "Our most popular package for full wedding day coverage and extra keepsakes.",
-    price: "€800",
-    period: "",
+    price: "€400",
     features: [
       "8 hours coverage",
-      "300+ edited photos",
+      "250+ edited photos",
       "Pre-wedding consultation",
-      "Online gallery + USB delivery",
+      "Pre-wedding Consultation",
     ],
     highlight: true,
   },
@@ -31,26 +104,25 @@ const weddingPlans = [
     name: "Full Day",
     description:
       "For couples who want every moment, from prep to party, captured in detail.",
-    price: "€1,300",
-    period: "",
+    price: "€700",
     features: [
-      "12 hours coverage",
+      "Full Day Coverage",
       "All-day story (prep to party)",
       "500+ edited photos",
+      "Free Pre-Wedding/Engagement Shoot",
       "Pre-wedding consultation",
-      "Custom USB box + prints",
     ],
     highlight: false,
   },
 ];
 
-const addOns = [
-  { name: "Second Photographer", price: "+€150", desc: "For full-day events" },
-  {
-    name: "Wedding Album",
-    price: "from €150",
-    desc: "Custom-designed 20-page hardcover",
-  },
+const weddingAddOns = [
+  // { name: "Second Photographer", price: "+€150", desc: "For full-day events" },
+  // {
+  //   name: "Wedding Album",
+  //   price: "from €150",
+  //   desc: "Custom-designed 20-page hardcover",
+  // },
   {
     name: "Engagement Shoot",
     price: "€250",
@@ -58,277 +130,193 @@ const addOns = [
   },
 ];
 
-const portraitPlans = [
+const photographyTypes: Array<{
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  images: string[];
+  highlights: string[];
+  packages: any[];
+  sections?: { title: string; packages: any[] }[];
+  addOns?: any[];
+  reverse?: boolean;
+}> = [
   {
-    name: "Mini Session",
-    price: "€100",
-    features: ["1 hour", "10 high-res edited images", "Online gallery"],
+    id: "lifestyle",
+    title: "Lifestyle Photography",
+    subtitle: "Capturing Authentic Moments",
+    description: "Professional studio and outdoor portrait sessions for individuals, families, and personal branding. Our lifestyle photography captures your genuine personality and connections in natural, relaxed settings.",
+    images: [
+      "/images/photography/lady-smiling-while-holding-a-flower-in-limerick.jpg",
+      "/images/photography/man-with-star-wars-helmet-ireland.jpg",
+      "/images/photography/lifestyle-photography-limerick.jpg",
+      "/images/photography/lady-kneeling-in-bed-of-flowers-limerick.jpg",
+      "/images/photography/studio-portrait-ireland.jpg",
+    ],
+    highlights: [
+      "Studio & Outdoor Sessions",
+      "Personal Branding",
+      "Family Portraits",
+      "Individual Portraits"
+    ],
+    packages: [...lifestylePackages.studio, ...lifestylePackages.outdoor],
+    sections: [
+      {
+        title: "Studio Shoot Packages",
+        packages: lifestylePackages.studio
+      },
+      {
+        title: "Outdoor Shoot Packages", 
+        packages: lifestylePackages.outdoor
+      }
+    ],
   },
   {
-    name: "Standard Portrait",
-    price: "€250",
-    features: ["2 hours", "30+ images", "1 location"],
-  },
-  {
-    name: "Family Session",
-    price: "€400",
-    features: ["2.5 hours", "40+ images", "Group & individual shots"],
-  },
-];
-
-const eventPlans = [
-  {
-    name: "Half-Day Coverage",
-    price: "€200",
-    features: ["2 hours", "30+ images", "Online delivery"],
-  },
-  {
-    name: "Full-Day Coverage",
-    price: "€500",
-    features: ["6 hours", "300+ images", "Online gallery"],
-  },
+    id: "wedding",
+    title: "Wedding Photography",
+    subtitle: "Your Love Story, Beautifully Told",
+    description: "From intimate ceremonies to grand celebrations, our wedding photography preserves every precious moment of your special day. We blend photojournalistic and artistic styles to create timeless images you'll treasure forever.",
+    images: [
+      "/images/photography/outdoor-wedding-ireland.jpg",
+      "/images/photography/engagement-proposal-shoot-ireland.jpg",
+      "/images/photography/couple-in-love-ireland.jpg",
+      "/images/photography/pre-wedding-shoot-limerick.jpg",
+    ],
+    highlights: [
+      "Full Day Coverage",
+      "Pre-Wedding Consultation",
+      "Professional Editing",
+      "Multiple Package Options"
+    ],
+    packages: weddingPackages,
+    addOns: weddingAddOns,
+    reverse: true,
+  }
 ];
 
 export default function PhotographyRatesPage() {
-  const [billing, setBilling] = useState("wedding");
+  const [openModal, setOpenModal] = useState<string | null>(null);
+
+  const handleOpenModal = (id: string) => {
+    setOpenModal(id);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(null);
+  };
 
   return (
-    <main className="min-h-screen w-full bg-[var(--background)] py-16 px-4 md:px-0 flex flex-col items-center">
-      <motion.div
-        className="w-full max-w-5xl mx-auto flex flex-col items-center"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-2 text-center text-[var(--text)] mb-10">
-          Photography Pricing
-        </h1>
-        {/* Billing Toggle */}
-        <div className="relative flex items-center justify-center gap-2 mb-12 bg-[var(--card)] rounded-full p-[6px] shadow-inner w-full max-w-2xl h-14">
-          {[
-            { label: "Wedding", value: "wedding" },
-            { label: "Portrait & Lifestyle", value: "portrait" },
-            { label: "Event", value: "event" },
-          ].map((tab) => (
-            <button
-              key={tab.value}
-              className={`relative flex-1 h-full px-8 py-2 rounded-full font-semibold transition text-base z-10 flex items-center justify-center ${billing === tab.value ? "text-white font-bold" : "text-[var(--text)]/70"}`}
-              onClick={() => setBilling(tab.value)}
-              aria-pressed={billing === tab.value}
-              style={{ minWidth: 0 }}
-            >
-              {billing === tab.value && (
-                <motion.div
-                  layoutId="tabHighlight"
-                  className="absolute inset-0 rounded-full z-0"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, var(--text) 0%, var(--divider) 100%)",
-                  }}
-                  transition={{ type: "spring", stiffness: 500, damping: 40 }}
-                />
-              )}
-              <span className="relative z-10">{tab.label}</span>
-            </button>
-          ))}
-        </div>
-        {/* Plans Grid */}
-        {billing === "wedding" && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-10">
-            {weddingPlans.map((plan, i) => (
-              <motion.div
-                key={plan.name}
-                className={`flex flex-col rounded-2xl p-8 shadow-lg bg-[var(--card)] border border-[var(--divider)] ${plan.highlight ? "ring-2 ring-[var(--text)]" : ""}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 * i, ease: "easeOut" }}
-              >
-                <div className={`mb-4`}>
-                  <span
-                    className={`inline-block px-4 py-1 rounded-full text-xs font-bold mb-2 ${plan.highlight ? "bg-[var(--text)] text-[var(--background)]" : "bg-[var(--divider)] text-[var(--text)]"}`}
-                  >
-                    {plan.name}
-                  </span>
-                  <p className={`text-sm mb-4 text-[var(--divider)]`}>
-                    {plan.description}
-                  </p>
-                </div>
-                <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-extrabold text-[var(--text)]">
-                    {plan.price}
-                  </span>
-                  <span className="text-base text-[var(--divider)] ml-1">
-                    {plan.period}
-                  </span>
-                </div>
-                <ul className="flex-1 flex flex-col gap-2 mb-8 text-[var(--text)]">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-base">
-                      <span className="text-lg">✔️</span> {feature}
-                    </li>
-                  ))}
-                </ul>
+    <>
+      <NavBar />
+      <main className="min-h-screen w-full bg-[var(--background)] py-8 px-4 md:px-8">
+        <motion.div
+          className="w-full max-w-7xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+        >
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--text)]">
+              Photography Services
+            </h1>
+          </div>
 
-                <div className="flex justify-center mt-4">
-                  <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
-                  >
-                    <Button
-                      href="mailto:mejabidurotimi@gmail.com"
-                      variant="primary"
-                      className="w-auto px-6"
-                    >
-                      Contact Me
-                      <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
-                        →
-                      </span>
-                    </Button>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
-        {billing === "wedding" && (
-          <div className="w-full max-w-3xl mb-10">
-            <h2 className="text-xl font-bold mb-2 text-[var(--text)]">
-              Add-Ons
-            </h2>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {addOns.map((add) => (
-                <li
-                  key={add.name}
-                  className="bg-[var(--card)] rounded-xl p-8 border border-[var(--divider)] flex flex-col items-center text-center"
-                >
-                  <span className="font-bold text-2xl text-[var(--text)] mb-2">
-                    {add.name}
-                  </span>
-                  <span className="text-[var(--divider)] text-lg mb-1 text-[var(--text)] font-semibold">
-                    {add.price}
-                  </span>
-                  <span className="text-base text-[var(--divider)] text-[var(--text)] ">
-                    {add.desc}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {billing === "portrait" && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-10">
-            {portraitPlans.map((plan, i) => (
+          {/* Photography Type Sections */}
+          <div className="space-y-24">
+            {photographyTypes.map((type, index) => (
               <motion.div
-                key={plan.name}
-                className="flex flex-col rounded-2xl p-8 shadow-lg bg-[var(--card)] border border-[var(--divider)]"
-                initial={{ opacity: 0, y: 30 }}
+                key={type.title}
+                initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 * i, ease: "easeOut" }}
+                transition={{ duration: 0.7, delay: index * 0.2 }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  type.reverse ? "lg:grid-flow-dense" : ""
+                }`}
               >
-                <div className="mb-4">
-                  <span className="inline-block px-4 py-1 rounded-full text-xs font-bold mb-2 bg-[var(--divider)] text-[var(--text)]">
-                    {plan.name}
-                  </span>
+                {/* Carousel Section */}
+                <div className={`${type.reverse ? "lg:col-start-2" : ""}`}>
+                  <PhotoCarousel images={type.images} alt={type.title} />
                 </div>
-                <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-extrabold text-[var(--text)]">
-                    {plan.price}
-                  </span>
-                </div>
-                <ul className="flex-1 flex flex-col gap-2 mb-8 text-[var(--text)]">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-base">
-                      <span className="text-lg">✔️</span> {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-center mt-4">
+
+                {/* Content Section */}
+                <div className={`${type.reverse ? "lg:col-start-1" : ""}`}>
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
+                    initial={{ opacity: 0, x: type.reverse ? -30 : 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="space-y-6"
                   >
-                    <Button
-                      href="mailto:mejabidurotimi@gmail.com"
-                      variant="primary"
-                      className="w-auto px-6"
-                    >
-                      Contact Me
-                      <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
-                        →
-                      </span>
-                    </Button>
+                    {/* Title Section */}
+                    <div>
+                      <h2 className="text-3xl md:text-4xl font-bold text-[var(--text)] mb-2">
+                        {type.title}
+                      </h2>
+                      <p className="text-xl text-[var(--text)]/70 italic">
+                        {type.subtitle}
+                      </p>
+                    </div>
+
+                    {/* View Product Button */}
+                    <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.96 }}>
+              <Button
+                onClick={() => handleOpenModal(type.id)}
+                className="px-8 py-3 rounded-full font-medium text-base flex items-center gap-2 shadow-lg cursor-pointer"
+              >
+                See Rates
+                <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
+                  →
+                </span>
+              </Button>
+            </motion.div>
+
+                    {/* Description */}
+                    <div className="pt-4">
+                      <h3 className="text-2xl font-semibold text-[var(--text)] mb-4">
+                        {type.reverse ? "Why Choose Our Wedding Photography" : "What Makes Us Different"}
+                      </h3>
+                      <p className="text-[var(--text)]/80 leading-relaxed">
+                        {type.description}
+                      </p>
+                    </div>
+
+                    {/* Highlights Section */}
+                    {type.highlights && (
+                      <div className="pt-4">
+                        <h4 className="text-lg font-semibold text-[var(--text)] mb-3">
+                          Key Features
+                        </h4>
+                        <ul className="space-y-2">
+                          {type.highlights.map((highlight, idx) => (
+                            <li key={idx} className="flex items-center gap-2 text-[var(--text)]/70">
+                              <span className="text-green-500">✓</span>
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </motion.div>
                 </div>
               </motion.div>
             ))}
           </div>
-        )}
-        {billing === "event" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-10">
-            {eventPlans.map((plan, i) => (
-              <motion.div
-                key={plan.name}
-                className="flex flex-col rounded-2xl p-8 shadow-lg bg-[var(--card)] border border-[var(--divider)]"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 * i, ease: "easeOut" }}
-              >
-                <div className="mb-4">
-                  <span className="inline-block px-4 py-1 rounded-full text-xs font-bold mb-2 bg-[var(--divider)] text-[var(--text)]">
-                    {plan.name}
-                  </span>
-                </div>
-                <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-extrabold text-[var(--text)]">
-                    {plan.price}
-                  </span>
-                </div>
-                <ul className="flex-1 flex flex-col gap-2 mb-8 text-[var(--text)]">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-base">
-                      <span className="text-lg">✔️</span> {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-center mt-4">
-                  <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
-                  >
-                    <Button
-                      href="mailto:mejabidurotimi@gmail.com"
-                      variant="primary"
-                      className="w-auto px-6"
-                    >
-                      Contact Me
-                      <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
-                        →
-                      </span>
-                    </Button>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
-        <section className="mb-8 w-full max-w-3xl">
-          <h2 className="text-2xl font-bold mb-2 text-[var(--text)]">
-            Delivery & Additional Info
-          </h2>
-          <ul className="list-disc pl-6 text-[var(--text)] text-base space-y-2">
-            <li>
-              All sessions include professional editing &amp; color grading
-            </li>
-            <li>Images delivered via secure online gallery (downloadable)</li>
-            <li>Delivery time: 1–4 weeks (depending on the package)</li>
-            <li>
-              Travel within Limerick is included — travel outside incurs a
-              mileage fee
-            </li>
-            <li>20% booking deposit required to confirm your date</li>
-          </ul>
-        </section>
-      </motion.div>
-    </main>
+        </motion.div>
+      </main>
+
+      {/* Modals */}
+      {photographyTypes.map((type) => (
+        <RatesModal
+          key={type.id}
+          isOpen={openModal === type.id}
+          onClose={handleCloseModal}
+          title={`${type.title} - Price List`}
+          packages={type.packages}
+          sections={type.sections}
+          addOns={type.addOns}
+        />
+      ))}
+    </>
   );
 }

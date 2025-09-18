@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
 import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -262,7 +261,7 @@ export default function RootLayout({
               }),
             }}
           />
-          <Hero />
+          
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
