@@ -130,6 +130,20 @@ const weddingAddOns = [
   },
 ];
 
+interface Package {
+  name: string;
+  price: string;
+  features: string[];
+  description?: string;
+  highlight?: boolean;
+}
+
+interface AddOn {
+  name: string;
+  price: string;
+  desc: string;
+}
+
 const photographyTypes: Array<{
   id: string;
   title: string;
@@ -137,9 +151,9 @@ const photographyTypes: Array<{
   description: string;
   images: string[];
   highlights: string[];
-  packages: any[];
-  sections?: { title: string; packages: any[] }[];
-  addOns?: any[];
+  packages: Package[];
+  sections?: { title: string; packages: Package[] }[];
+  addOns?: AddOn[];
   reverse?: boolean;
 }> = [
   {
