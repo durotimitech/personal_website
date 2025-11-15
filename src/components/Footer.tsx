@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
           <div className="w-full md:w-auto flex justify-center md:justify-end gap-6">
             <a
-              href="https://www.instagram.com/mejabidurotimi/"
+              href="https://www.instagram.com/createdbytimmy/"
               className="hover:underline text-[var(--text)] font-bold"
               target="_blank"
               rel="noopener noreferrer"

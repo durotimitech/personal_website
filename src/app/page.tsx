@@ -2,15 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
-  const services = [
-    { name: "Photography", href: "/photography" },
-    { name: "Videography", href: "/videography" },
-    { name: "Web Development", href: "/web-development" },
-    { name: "Event Planning", href: "/event-planning" },
-  ];
 
   const socialLinks = [
     // {

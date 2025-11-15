@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import Button from "@/components/ui/Button";
+import NavBar from "@/components/ui/NavBar";
 
 const photographs = [
   {
@@ -122,13 +123,14 @@ export default function PhotographyPage() {
     null,
   );
   return (
+    <>
+    <NavBar />
     <motion.main
       className="min-h-screen w-full bg-[var(--background)] py-16 px-4 md:px-10 flex items-center justify-center"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-
       <div className="max-w-5xl w-full">
         <motion.h1
           className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 text-[var(--text)] text-center"
@@ -200,14 +202,14 @@ export default function PhotographyPage() {
                   </span>
                 </Button>
               </motion.div>
-              {/* <motion.div whileHover={{ scale: 1.03 }}>
+              <motion.div whileHover={{ scale: 1.03 }}>
                 <Button href="/rates/photography" variant="secondary">
                   See Rates
                   <span className="w-7 h-7 rounded-full bg-[var(--divider)] flex items-center justify-center ml-2 text-[var(--text)] text-lg">
                     €
                   </span>
                 </Button>
-              </motion.div> */}
+              </motion.div>
             </div>
           </motion.div>
           {photographs.slice(6).map((photo, i) => (
@@ -269,5 +271,7 @@ export default function PhotographyPage() {
         </AnimatePresence>
       </div>
     </motion.main>
+    </>
+
   );
 }
