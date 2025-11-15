@@ -1,16 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+import ConditionalLayout from "@/components/ConditionalLayout";
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Created By Timmy',
-    default: 'Created By Timmy | Wedding & Lifestyle Photography & Videography Limerick',
+    template: '%s | Timmy Mejabi',
+    default: 'Timmy Mejabi',
   },
   description: 'Creative and lifestyle wedding photography, videography, and event planning in Limerick and across Ireland. Capturing authentic moments with artistic vision.',
   keywords: [
@@ -38,10 +37,10 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Created By Timmy | Wedding & Lifestyle Photography & Videography Limerick',
+    title: 'Timmy Mejabi',
     description: 'Creative and lifestyle wedding photography, videography, and event planning in Limerick and across Ireland.',
     url: 'https://mejabidurotimi.com',
-    siteName: 'Created By Timmy',
+    siteName: 'Timmy Mejabi',
     locale: 'en_IE',
     type: 'website',
     images: [
@@ -49,13 +48,13 @@ export const metadata: Metadata = {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Created By Timmy - Wedding & Lifestyle Photography & Videography Limerick',
+        alt: 'Timmy Mejabi',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Created By Timmy | Wedding & Lifestyle Photography & Videography Limerick',
+    title: 'Timmy Mejabi',
     description: 'Creative and lifestyle wedding photography, videography, and event planning in Limerick and across Ireland.',
     images: ['/logo.png'],
   },
@@ -84,9 +83,9 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Created By Timmy Photography',
+    title: 'Timmy Mejabi',
   },
-  applicationName: 'Created By Timmy Photography',
+  applicationName: 'Timmy Mejabi',
   generator: 'Next.js',
   other: {
     'msapplication-TileColor': '#d6cbb6',
@@ -129,8 +128,8 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Created By Timmy" />
-        <meta name="application-name" content="Created By Timmy Photography" />
+        <meta name="apple-mobile-web-app-title" content="Timmy Mejabi" />
+        <meta name="application-name" content="Timmy Mejabi" />
         <meta name="msapplication-tooltip" content="Wedding & Lifestyle Photography & Videography Limerick" />
         <meta name="msapplication-starturl" content="/" />
         <meta name="geo.region" content="IE-D" />
@@ -140,7 +139,7 @@ export default function RootLayout({
       </head>
       <body
         className={
-          montserrat.className +
+          inter.className +
           " bg-[var(--background)] text-[var(--text)] min-h-screen"
         }
       >
@@ -155,7 +154,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-WCVFEFZPTZ', {
-                page_title: 'Created By Timmy',
+                page_title: 'Timmy Mejabi',
                 page_location: window.location.href,
                 anonymize_ip: true,
                 allow_google_signals: true,
@@ -172,8 +171,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "@id": "https://mejabidurotimi.com",
-                name: "Created By Timmy",
-                alternateName: "Created By Timmy",
+                name: "Timmy Mejabi",
+                alternateName: "Timmy Mejabi",
                 description: "Creative and lifestyle wedding photography, videography, and event planning in Limerick and across Ireland.",
                 image: "https://mejabidurotimi.com/logo.png",
                 logo: "https://mejabidurotimi.com/logo.png",
@@ -197,13 +196,13 @@ export default function RootLayout({
                     name: "Limerick, Ireland",
                   },
                   {
-                    "@type": "Place", 
+                    "@type": "Place",
                     name: "Ireland",
                   },
                 ],
                 serviceType: [
                   "Wedding Photography",
-                  "Wedding Videography", 
+                  "Wedding Videography",
                   "Event Planning",
                   "Portrait Photography",
                   "Documentary Photography",
@@ -224,7 +223,7 @@ export default function RootLayout({
                       }
                     },
                     {
-                      "@type": "Offer", 
+                      "@type": "Offer",
                       itemOffered: {
                         "@type": "Service",
                         name: "Wedding Videography",
@@ -234,7 +233,7 @@ export default function RootLayout({
                     {
                       "@type": "Offer",
                       itemOffered: {
-                        "@type": "Service", 
+                        "@type": "Service",
                         name: "Event Planning",
                         description: "Full-service event planning for weddings and special occasions"
                       }
@@ -262,9 +261,7 @@ export default function RootLayout({
               }),
             }}
           />
-          <Hero />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <ConditionalLayout>{children}</ConditionalLayout>
         </div>
       </body>
     </html>
