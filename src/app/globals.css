@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #d6cbb6;
+  --background: #ffffff;
   --text: #181818;
   --divider: #b8ae9c;
   --card: #ede6d6;
@@ -12,7 +12,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--text);
   font-family: var(--font-sans);
   letter-spacing: 0;

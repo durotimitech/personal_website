@@ -140,7 +140,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " bg-[var(--background)] text-[var(--text)] min-h-screen"
+          " bg-white text-[var(--text)] min-h-screen"
         }
       >
         <div className="max-w-7xl mx-auto w-full min-h-screen flex flex-col">
